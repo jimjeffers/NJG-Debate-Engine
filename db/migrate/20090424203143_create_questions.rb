@@ -1,7 +1,8 @@
 class CreateQuestions < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
-
+      t.references :sport
+      t.text :contents
       t.timestamps
     end
   end

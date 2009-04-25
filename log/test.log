@@ -1,0 +1,111 @@
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-24 20:46:01', NULL, NULL, '2009-04-24 20:46:01')[0m
+  [4;36;1mQuestion Create (0.3ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:26:17', NULL, NULL, '2009-04-25 07:26:17')[0m
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:26:54', NULL, NULL, '2009-04-25 07:26:54')[0m
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:27:15', NULL, NULL, '2009-04-25 07:27:15')[0m
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:34:49', NULL, 'This is a test. Or is it?', '2009-04-25 07:34:49')[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:34:51', NULL, NULL, NULL, '2009-04-25 07:34:51')[0m
+  [4;35;1mSport Exists (0.1ms)[0m   [0mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;36;1mSport Create (0.2ms)[0m   [0;1mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 07:34:51', '2009-04-25 07:34:51')[0m
+  [4;35;1mQuestion Create (0.2ms)[0m   [0mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:34:51', NULL, 'This is a test. Or is it?', '2009-04-25 07:34:51')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:34:57', NULL, NULL, NULL, '2009-04-25 07:34:57')[0m
+  [4;35;1mSport Exists (0.1ms)[0m   [0mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;36;1mSport Create (0.3ms)[0m   [0;1mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 07:34:57', '2009-04-25 07:34:57')[0m
+  [4;35;1mQuestion Create (0.2ms)[0m   [0mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:34:57', NULL, 'This is a test. Or is it?', '2009-04-25 07:34:57')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:36:36', NULL, NULL, NULL, '2009-04-25 07:36:36')[0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:36:45', NULL, NULL, NULL, '2009-04-25 07:36:45')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:36:54', NULL, NULL, NULL, '2009-04-25 07:36:54')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:38:14', NULL, NULL, 'I think it is a test.', '2009-04-25 07:38:14')[0m
+  [4;36;1mSport Exists (0.1ms)[0m   [0;1mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;35;1mSport Create (0.4ms)[0m   [0mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 07:38:16', '2009-04-25 07:38:16')[0m
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:38:16', NULL, 'This is a test. Or is it?', '2009-04-25 07:38:16')[0m
+  [4;35;1mAnswer Create (0.4ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:38:16', NULL, NULL, 'I think it is a test.', '2009-04-25 07:38:16')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:50:15', NULL, NULL, 'I think it is a test.', '2009-04-25 07:50:15')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:50:15', NULL, NULL, 'I think it is a test.', '2009-04-25 07:50:15')[0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:50:56', NULL, NULL, 'I think it is a test.', '2009-04-25 07:50:56')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:50:56', NULL, NULL, 'I think it is a test.', '2009-04-25 07:50:56')[0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:24', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:24')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:24', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:24')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:24', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:24')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:29', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:29')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:29', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:29')[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:29', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:29')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:39', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:39')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:39', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:39')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:39', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:39')[0m
+  [4;36;1mSport Exists (0.1ms)[0m   [0;1mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;35;1mSport Create (0.4ms)[0m   [0mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 07:52:41', '2009-04-25 07:52:41')[0m
+  [4;36;1mQuestion Create (0.2ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:52:41', NULL, 'This is a test. Or is it?', '2009-04-25 07:52:41')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:41', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:41')[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:41', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:41')[0m
+  [4;35;1mAnswer Create (0.1ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:52:41', NULL, NULL, 'I think it is a test.', '2009-04-25 07:52:41')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:00', NULL, NULL, 'I think it is a test.', '2009-04-25 07:53:00')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:00', NULL, NULL, 'I think it is a test.', '2009-04-25 07:53:00')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:00', NULL, NULL, 'I think it is a test.', '2009-04-25 07:53:00')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:44', 1, 1, 'I think it is a test.', '2009-04-25 07:53:44')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:44', 1, 1, 'I think it is a test.', '2009-04-25 07:53:44')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:53:44', 1, 1, 'I think it is a test.', '2009-04-25 07:53:44')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:19', 1, 1, 'I think it is a test.', '2009-04-25 07:55:19')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:19', 1, 1, 'I think it is a test.', '2009-04-25 07:55:19')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:19', 1, 1, 'I think it is a test.', '2009-04-25 07:55:19')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:19', NULL, NULL, 'Not enough meta information!', '2009-04-25 07:55:19')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:49', 1, 1, 'I think it is a test.', '2009-04-25 07:55:49')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:49', 1, 1, 'I think it is a test.', '2009-04-25 07:55:49')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:49', 1, 1, 'I think it is a test.', '2009-04-25 07:55:49')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:55:49', NULL, NULL, 'Not enough meta information!', '2009-04-25 07:55:49')[0m
+  [4;36;1mAnswer Create (0.6ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:56:15', 1, 1, 'I think it is a test.', '2009-04-25 07:56:15')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:56:15', 1, 1, 'I think it is a test.', '2009-04-25 07:56:15')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:56:15', 1, 1, 'I think it is a test.', '2009-04-25 07:56:15')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:56:15', NULL, NULL, 'Not enough meta information!', '2009-04-25 07:56:15')[0m
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 07:58:29', NULL, 'This is a test. Or is it?', '2009-04-25 07:58:29')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:29', 1, 1, 'I think it is a test.', '2009-04-25 07:58:29')[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:29', 1, 1, 'I think it is a test.', '2009-04-25 07:58:29')[0m
+  [4;35;1mAnswer Create (0.1ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:29', 1, 1, 'I think it is a test.', '2009-04-25 07:58:29')[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:29', NULL, NULL, 'Not enough meta information!', '2009-04-25 07:58:29')[0m
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:35', 1, 1, 'I think it is a test.', '2009-04-25 07:58:35')[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:35', 1, 1, 'I think it is a test.', '2009-04-25 07:58:35')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 07:58:35', 1, 1, 'I think it is a test.', '2009-04-25 07:58:35')[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mSport Exists (0.1ms)[0m   [0;1mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;35;1mSport Create (0.4ms)[0m   [0mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 08:07:07', '2009-04-25 08:07:07')[0m
+  [4;36;1mQuestion Create (0.2ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 08:07:07', NULL, 'This is a test. Or is it?', '2009-04-25 08:07:07')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:27', 1, 1, 'I think it is a test.', '2009-04-25 08:07:27')[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:27', 1, 1, 'I think it is a test.', '2009-04-25 08:07:27')[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mSport Exists (0.1ms)[0m   [0;1mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;35;1mSport Create (0.3ms)[0m   [0mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 08:07:28', '2009-04-25 08:07:28')[0m
+  [4;36;1mQuestion Create (0.2ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 08:07:28', NULL, 'This is a test. Or is it?', '2009-04-25 08:07:28')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:28', 1, 1, 'I think it is a test.', '2009-04-25 08:07:28')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:28', 1, 1, 'I think it is a test.', '2009-04-25 08:07:28')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:49', 1, 1, 'I think it is a test.', '2009-04-25 08:07:49')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:49', 1, 1, 'I think it is a test.', '2009-04-25 08:07:49')[0m
+  [4;36;1mAnswer Create (0.1ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:49', 1, 1, 'I think it is a test.', '2009-04-25 08:07:49')[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.5ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:54', 1, 1, 'I think it is a test.', '2009-04-25 08:07:54')[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:54', 1, 1, 'I think it is a test.', '2009-04-25 08:07:54')[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
+  [4;36;1mSport Exists (0.1ms)[0m   [0;1mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'football') LIMIT 1[0m
+  [4;35;1mSport Create (0.4ms)[0m   [0mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('football', '2009-04-25 08:07:56', '2009-04-25 08:07:56')[0m
+  [4;36;1mQuestion Create (0.2ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-25 08:07:56', NULL, 'This is a test. Or is it?', '2009-04-25 08:07:56')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:56', 1, 1, 'I think it is a test.', '2009-04-25 08:07:56')[0m
+  [4;35;1mAnswer Load (0.1ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-25 08:07:56', 1, 1, 'I think it is a test.', '2009-04-25 08:07:56')[0m
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers"."question_id" = 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.1ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers"."question_id" IS NULL) LIMIT 1[0m
