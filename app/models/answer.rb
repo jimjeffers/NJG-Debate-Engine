@@ -2,9 +2,7 @@ class Answer < ActiveRecord::Base
   validates_presence_of :contents
   validates_presence_of :question_id
   validates_presence_of :user_id
-  validate_on_create :cannot_already_be_answered
+  validates_uniqueness_of :user_id, :scope => [:question_id]
   
-  def cannot_already_be_answered
-    errors.add_to_base("Cannot answer the same question twice") unless Answer.find_by_user_id_and_question_id(user_id,question_id).nil?
-  end
+  acts_as_debated
 end

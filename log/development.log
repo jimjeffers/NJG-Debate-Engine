@@ -120,3 +120,227 @@ Migrating to CreateSports (20090425073123)
   [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090425073123')[0m
   [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424203143')[0m
   [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090425072906')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+Migrating to CreateAnswers (20090425072906)
+Migrating to CreateSports (20090425073123)
+Migrating to CreateRatings (20090425153356)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (63.3ms)[0m   [0mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "rateable_id" integer, "rateable_type" varchar(255) DEFAULT 'Answer', "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090425153356')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ratings")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sports")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("ratings")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sports")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "user_id" integer, "contents" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sport_id" integer, "contents" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "rateable_id" integer, "rateable_type" varchar(255) DEFAULT 'Answer', "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090425153356')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424203143')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090425072906')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090425073123')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+Migrating to CreateAnswers (20090425072906)
+Migrating to CreateSports (20090425073123)
+Migrating to CreateRatings (20090425153356)
+Migrating to DebateableMigration (20090426182347)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+Migrating to CreateAnswers (20090425072906)
+Migrating to CreateSports (20090425073123)
+Migrating to CreateRatings (20090425153356)
+Migrating to DebateableMigration (20090426182347)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (67.4ms)[0m   [0mCREATE TABLE "debateables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "debated_id" integer, "debated_type" varchar(32), "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_debateables_on_user_id" ON "debateables" ("user_id")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_debateables_on_debated_id_and_debated_type" ON "debateables" ("debated_id", "debated_type")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090426182347')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("debateables")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ratings")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mDebateable Create (0.7ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 18:45:03', '--- []
+
+', NULL, NULL, '2009-04-26 18:45:03')[0m
+  [4;36;1mDebateable Create (0.5ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 18:46:14', '--- []
+
+', 17049280, NULL, '2009-04-26 18:46:14')[0m
+  [4;36;1mDebateable Create (0.5ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 18:47:51', '--- []
+
+', 17048970, NULL, '2009-04-26 18:47:51')[0m
+  [4;35;1mAnswer Exists (0.2ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Exists (0.1ms)[0m   [0;1mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id IS NULL) LIMIT 1[0m
+  [4;35;1mAnswer Exists (0.1ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Exists (0.1ms)[0m   [0;1mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id = 1) LIMIT 1[0m
+  [4;35;1mAnswer Exists (0.1ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 2 AND "answers".question_id = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-26 18:50:13', 1, 2, 'something', '2009-04-26 18:50:13')[0m
+  [4;35;1mDebateable Load (0.3ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mDebateable Update (0.3ms)[0m   [0;1mUPDATE "debateables" SET "debated_id" = 16611540, "updated_at" = '2009-04-26 18:50:25' WHERE "id" = 3[0m
+  [4;36;1mAnswer Load (0.5ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Create (0.6ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 18:51:21', 'Answer', 1, NULL, '2009-04-26 18:51:21')[0m
+  [4;36;1mDebateable Load (0.3ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.5ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Create (0.5ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 18:52:39', 'Answer', 1, NULL, '2009-04-26 18:52:39')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.4ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.5ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.2ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."score" = 1) LIMIT 1[0m
+  [4;36;1mDebateable Create (0.5ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(1, '2009-04-26 19:54:52', NULL, NULL, NULL, '2009-04-26 19:54:52')[0m
+  [4;35;1mDebateable Load (0.3ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) LIMIT 1[0m
+  [4;36;1mDebateable Create (0.6ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 19:54:59', NULL, NULL, 1, '2009-04-26 19:54:59')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mDebateable Load (0.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1 AND "debateables"."debated_type" = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Create (0.5ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-26 19:55:42', 'Answer', NULL, 1, '2009-04-26 19:55:42')[0m
+  [4;36;1mDebateable Load (0.5ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1 AND "debateables"."debated_type" = 'Answer') LIMIT 1[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.3ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1 AND "debateables"."debated_type" = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Load (0.4ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1 AND "debateables"."debated_type" = 'Answer') LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
