@@ -9,30 +9,65 @@ module ActiveRecord
       module ClassMethods
         def acts_as_debated(options = {})
           has_many :debateables, :as => :debated, :dependent => :destroy
-          
-          include ActiveRecord::Acts::Debated::InstanceMethods
           extend ActiveRecord::Acts::Debated::SingletonMethods
+          include ActiveRecord::Acts::Debated::InstanceMethods
         end
       end
       
-      module SingletonMethods
-        def find_average_of( score )
-          find(:all, :include => [:rates] ).collect {|i| i if i.average_rating.to_i == score }.compact
+      module OrderByScore
+        def order_by_score(sql={})
+          proxy_reflection.klass.order_by_score(sql.merge({:owner => proxy_owner}))
         end
       end
-
+        
+      module SingletonMethods
+        def order_by_score(sql={})
+          find_by_sql(" SELECT 
+                          target_objects.*,
+                          debateables.debated_id,
+                          debateables.debated_type, 
+                          sum(debateables.score) AS total_score 
+                        FROM 
+                          #{table_name} target_objects, 
+                          #{Debateable.table_name} debateables 
+                        WHERE
+                          debateables.debated_id = target_objects.id AND
+                          debateables.debated_type = '#{name}'
+                          #{'AND target_objects.'+sql[:owner].class.name+'_id = '+sql[:owner].id.to_s if sql[:owner]}
+                        GROUP BY
+                          debateables.debated_id
+                        ORDER BY 
+                          total_score #{sql[:order] || 'DESC'}
+                        #{'LIMIT '+sql[:limit].to_s if sql[:limit]} 
+                        #{'OFFSET '+sql[:offset].to_s if sql[:offset]}")
+        end
+      end
+      
       module InstanceMethods
         # Rates the object by a given score. A user object can be passed to the method.
-        def debate_it( thumbs_up, user_id )
-          return unless user_id
-          debateable = Debateable.find_or_create_by_user_id_and_debated_type_and_debated_id(1,self.class,self.id)
-          debateable.user_id = user_id
+        def debate_it( thumbs_up, user )
+          return unless user
+          debateable = debateables.find_or_create_by_user_id(user.id)
           debateable.score = (thumbs_up) ? 1 : -1
-          debateables << debateable
+          (debateable.new_record?) ? debateables << debateable : debateable.save
+          debateable
         end
         
-        def debate_score
+        def debated_score
           debateables.sum(:score)
+        end
+        
+        def thumbs_up_from(user)
+          debate_it(true,user)
+        end
+        
+        def thumbs_down_from(user)
+          debate_it(false,user)
+        end
+        
+        # Checks wheter a user rated the object or not.
+        def debated_by?(user)
+          (debateables.detect {|r| r.user_id == user.id })
         end
       end
       

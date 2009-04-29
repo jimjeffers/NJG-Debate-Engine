@@ -344,3 +344,1810 @@ Migrating to DebateableMigration (20090426182347)
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+  [4;36;1mAnswer Load (1.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.4ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 2 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;36;1mDebateable Create (0.4ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:16:27', 1, 1, 2, '2009-04-27 03:16:27')[0m
+  [4;35;1mDebateable Update (0.4ms)[0m   [0mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:16:27' WHERE "id" = 9[0m
+  [4;36;1mDebateable Load (0.9ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.1ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 2 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;35;1mDebateable Create (0.5ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:16:41', 1, 1, 2, '2009-04-27 03:16:41')[0m
+  [4;36;1mDebateable Update (0.4ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:16:41' WHERE "id" = 10[0m
+  [4;35;1mDebateable Load (0.9ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.2ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 2 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;36;1mDebateable Create (0.4ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:16:47', 1, 1, 2, '2009-04-27 03:16:47')[0m
+  [4;35;1mDebateable Update (0.4ms)[0m   [0mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:16:47' WHERE "id" = 11[0m
+  [4;36;1mDebateable Load (1.1ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 3 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;35;1mDebateable Create (0.3ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:16:55', 1, 1, 3, '2009-04-27 03:16:55')[0m
+  [4;36;1mDebateable Update (0.4ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:16:55' WHERE "id" = 12[0m
+  [4;35;1mDebateable Load (0.7ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.1ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 4 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;36;1mDebateable Create (0.8ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:17:03', 1, 1, 4, '2009-04-27 03:17:03')[0m
+  [4;35;1mDebateable Update (0.4ms)[0m   [0mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:17:03' WHERE "id" = 13[0m
+  [4;36;1mDebateable Load (1.4ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.1ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 5 AND "debateables"."debated_type" = 1 AND "debateables"."debated_id" = 1) LIMIT 1[0m
+  [4;35;1mDebateable Create (0.3ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 03:17:11', 1, 1, 5, '2009-04-27 03:17:11')[0m
+  [4;36;1mDebateable Update (0.3ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "debated_type" = 'Answer', "updated_at" = '2009-04-27 03:17:11' WHERE "id" = 14[0m
+  [4;35;1mDebateable Load (1.2ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("debateables")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ratings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (73.1ms)[0m   [0mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "user_id" integer, "contents" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE "debateables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "debated_id" integer, "debated_type" varchar(32), "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE INDEX "index_debateables_on_debated_id_and_debated_type" ON "debateables" ("debated_id", "debated_type")[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE INDEX "index_debateables_on_user_id" ON "debateables" ("user_id")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sport_id" integer, "contents" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "rateable_id" integer, "rateable_type" varchar(255) DEFAULT 'Answer', "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090426182347')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424203143')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090425072906')[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090425073123')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+Migrating to CreateAnswers (20090425072906)
+Migrating to CreateSports (20090425073123)
+Migrating to DebateableMigration (20090426182347)
+Migrating to CreateUsers (20090427032919)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090427032919')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("debateables")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ratings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("debateables")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("ratings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "user_id" integer, "contents" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "debateables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "debated_id" integer, "debated_type" varchar(32), "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE INDEX "index_debateables_on_debated_id_and_debated_type" ON "debateables" ("debated_id", "debated_type")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE INDEX "index_debateables_on_user_id" ON "debateables" ("user_id")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sport_id" integer, "contents" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "rateable_id" integer, "rateable_type" varchar(255) DEFAULT 'Answer', "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427032919')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424203143')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090425072906')[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090425073123')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090426182347')[0m
+  [4;36;1mAnswer Load (0.7ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "remember_token_expires_at", "activation_code", "remember_token", "login", "email", "created_at") VALUES('', 'a636586762229c962dcb2faa3c9ae963acc49963', '2009-04-27 03:39:52', NULL, '69bbe35330ce1ca1171afcf355281229b2d02181', NULL, 'a627938bc2a7fb0b9a31edc02ddf994e4c6f23e1', NULL, 'quire', 'quire@example.com', '2009-04-27 03:39:52')[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mDebateable Load (0.4ms)[0m   [0mSELECT * FROM "debateables" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.3ms)[0m   [0;1mSELECT * FROM "debateables" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.3ms)[0m   [0mSELECT * FROM "debateables" LIMIT 1[0m
+  [4;36;1mDebateable Exists (0.2ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" IS NULL AND "debateables".user_id IS NULL AND "debateables".debated_id IS NULL AND "debateables".debated_type = '--- []
+
+' AND "debateables".id <> 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Exists (0.1ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" IS NULL AND "debateables".user_id = 1 AND "debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Create (0.4ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-27 04:02:13', 'Answer', 1, 1, '2009-04-27 04:02:13')[0m
+  [4;35;1mDebateable Exists (0.2ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 1 AND "debateables".debated_id = 1 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 15) LIMIT 1[0m
+  [4;36;1mDebateable Update (0.3ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "updated_at" = '2009-04-27 04:02:13' WHERE "id" = 15[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.7ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.4ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Exists (0.2ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = -1 AND "debateables".user_id = 1 AND "debateables".debated_id = 1 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 15) LIMIT 1[0m
+  [4;36;1mDebateable Update (0.7ms)[0m   [0;1mUPDATE "debateables" SET "score" = -1, "updated_at" = '2009-04-27 04:03:01' WHERE "id" = 15[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.8ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.9ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.7ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'quire2') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'quire2@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "remember_token_expires_at", "activation_code", "remember_token", "login", "email", "created_at") VALUES('', '1151c6146860c7ef975cc34cf11ac209947dede2', '2009-04-27 04:04:41', NULL, 'e68037cca1c804e59c6db840f5f5f3fd6b1d626f', NULL, 'ed69cb9cbf04f4fc37b45a4605c0f8897bd289c6', NULL, 'quire2', 'quire2@example.com', '2009-04-27 04:04:41')[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mDebateable Load (1.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mDebateable Load (0.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 2) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mDebateable Load (0.2ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mDebateable Load (0.7ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.2ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Exists (0.1ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 1 AND "debateables".debated_id = 1 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 15) LIMIT 1[0m
+  [4;35;1mDebateable Update (0.5ms)[0m   [0mUPDATE "debateables" SET "score" = 1, "updated_at" = '2009-04-27 04:14:54' WHERE "id" = 15[0m
+  [4;36;1mAnswer Load (0.8ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.4ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Exists (0.1ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 1 AND "debateables".debated_id = 1 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 15) LIMIT 1[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-26 22:18:23) [GET]
+Rendering sessions/new
+Completed in 94ms (View: 92, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-26 22:18:29) [GET]
+Rendering users/new
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-04-26 22:18:45) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"944turbo", "password"=>"944turbo", "login"=>"jimjeffers", "email"=>"jim@sumocreations.com"}, "commit"=>"Sign up", "authenticity_token"=>"cRPyg5htI9vUcL4giyRzkpbAnpfaMJsDMJqKbZUsOtU="}
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'jimjeffers') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'jim@sumocreations.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "remember_token_expires_at", "activation_code", "remember_token", "login", "email", "created_at") VALUES('', '25d28c454da4492fac934c93ed26d86cf4722151', '2009-04-27 05:18:45', NULL, '0cd5a5d1d93b6924e43bab14a5a4a445bd1ec37c', NULL, '537dd7bb4bf6a650f953c20998b527fd5f9f5074', NULL, 'jimjeffers', 'jim@sumocreations.com', '2009-04-27 05:18:45')[0m
+Redirected to http://localhost:3000/
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-04-26 22:18:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Load (0.1ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Question with ID=1):
+  app/controllers/questions_controller.rb:16:in `show'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-26 22:19:00) [GET]
+
+ActionController::RoutingError (No route matches "/question/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-04-26 22:19:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.1ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Question with ID=1):
+  app/controllers/questions_controller.rb:16:in `show'
+
+Rendered rescues/_trace (101.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("updated_at", "sport_id", "contents", "created_at") VALUES('2009-04-27 05:19:33', NULL, 'This is a test!', '2009-04-27 05:19:33')[0m
+  [4;35;1mSport Exists (0.2ms)[0m   [0mSELECT "sports".id FROM "sports" WHERE ("sports"."name" = 'Football') LIMIT 1[0m
+  [4;36;1mSport Create (0.3ms)[0m   [0;1mINSERT INTO "sports" ("name", "updated_at", "created_at") VALUES('Football', '2009-04-27 05:19:51', '2009-04-27 05:19:51')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSport Load (0.6ms)[0m   [0;1mSELECT * FROM "sports" LIMIT 1[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mQuestion Update (0.4ms)[0m   [0;1mUPDATE "questions" SET "sport_id" = 1, "updated_at" = '2009-04-27 05:21:06' WHERE "id" = 1[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions".sport_id = 1) [0m
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-04-26 22:22:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 23ms (View: 9, DB: 0) | 200 OK [http://localhost/questions/1]
+  [4;36;1mAnswer Load (0.7ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mAnswer Exists (0.2ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 2 AND "answers".question_id = 1 AND "answers".id <> 1) LIMIT 1[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+
+
+Processing AnswersController#show (for 127.0.0.1 at 2009-04-26 22:23:05) [GET]
+  Parameters: {"question_id"=>"1", "id"=>"1"}
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."id" = 1) [0m
+Rendering template within layouts/answers
+Rendering answers/show
+
+ActionView::TemplateError (undefined method `edit_answer_path' for #<ActionView::Base:0x2488e18>) on line #2 of app/views/answers/show.html.erb:
+1: 
+2: <%= link_to 'Edit', edit_answer_path(@answer) %> |
+3: <%= link_to 'Back', answers_path %>
+
+    app/views/answers/show.html.erb:2
+    app/controllers/answers_controller.rb:18:in `show'
+
+Rendered rescues/_trace (105.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-04-26 22:23:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-04-26 22:24:01) [GET]
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing AnswersController#show to xml (for 127.0.0.1 at 2009-04-26 22:24:09) [GET]
+  Parameters: {"question_id"=>"1", "id"=>"1"}
+  [4;35;1mAnswer Load (0.2ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 1) [0m
+Completed in 141ms (View: 135, DB: 0) | 200 OK [http://localhost/questions/1/answers/1.xml]
+
+
+Processing QuestionsController#show to xml (for 127.0.0.1 at 2009-04-26 22:24:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/questions/1.xml]
+  [4;36;1mAnswer Load (1.7ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mDebateable Load (1.0ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: misuse of aggregate function Sum(): SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY Sum(debateables.score) DESC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (1.4ms)[0m   [0;1mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;36;1mAnswer Load Including Associations (1.3ms)[0m   [0;1mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;36;1mAnswer Load Including Associations (1.3ms)[0m   [0;1mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;35;1mAnswer Load Including Associations (1.4ms)[0m   [0mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: near "asc": syntax error: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' GROUP BY debated_score asc[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: near "ASC": syntax error: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' GROUP BY debated_score ASC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score ASC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score ASC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score ASC[0m
+  [4;35;1mAnswer Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT answers.id FROM "answers" ORDER BY debated_score ASC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score ASC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score ASC[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "WITH": syntax error: SELECT Customer, OrderNumber, Sum(Cost * Quantity) AS OrderTotal FROM Answers model, Debateables debateable GROUP BY Customer, OrderNumber WITH CUBE[0m
+  [4;35;1mAnswer Load Including Associations (1.3ms)[0m   [0mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;36;1mAnswer Load Including Associations (1.4ms)[0m   [0;1mSELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer'[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT answers.id,answers.contents,answers.question_id,answers.user_id,answers.created_at,answers.updated_at FROM "answers" ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT answers.* FROM "answers" ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT answers.* FROM "answers" [0m
+  [4;36;1mDebateable Load (0.9ms)[0m   [0;1mSELECT "debateables".* FROM "debateables" WHERE ("debateables"."debated_id" = 1 and "debateables"."debated_type" = 'Answer') [0m
+  [4;35;1mAnswer Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT answers.* FROM "answers" ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT answers.* FROM "answers" ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load Including Associations (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT "answers"."id" AS t0_r0, "answers"."question_id" AS t0_r1, "answers"."user_id" AS t0_r2, "answers"."contents" AS t0_r3, "answers"."created_at" AS t0_r4, "answers"."updated_at" AS t0_r5, "debateables"."id" AS t1_r0, "debateables"."user_id" AS t1_r1, "debateables"."debated_id" AS t1_r2, "debateables"."debated_type" AS t1_r3, "debateables"."score" AS t1_r4, "debateables"."created_at" AS t1_r5, "debateables"."updated_at" AS t1_r6 FROM "answers" LEFT OUTER JOIN "debateables" ON "debateables".debated_id = "answers".id AND "debateables".debated_type = 'Answer' ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: debated_score: SELECT answers.* FROM "answers" ORDER BY debated_score DESC[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debated_score: SELECT sum(answers.id) FROM "answers" ORDER BY debated_score DESC[0m
+  [4;35;1mAnswer Load (0.8ms)[0m   [0mSELECT sum(answers.id) debated_score FROM "answers" ORDER BY debated_score DESC[0m
+  [4;36;1mDebateable Load (0.1ms)[0m   [0;1mSELECT "debateables".* FROM "debateables" WHERE ("debateables"."debated_id" = NULL and "debateables"."debated_type" = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "Classes": syntax error: Classes.* FROM Classes[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "Answers": syntax error: Answers.* FROM Answers[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT Answers.* FROM Answers[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT Answers.* FROM Answers[0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: debatebles.score: SELECT Answers.*, sum(debatebles.score) AS debated_score FROM answers, debateables[0m
+  [4;36;1mAnswer Load (0.7ms)[0m   [0;1mSELECT answers.*, sum(debateables.score) AS debated_score FROM answers, debateables[0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ ORDER BY 
+ debated_score[0m
+  [4;35;1mAnswer Exists (0.2ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id IS NULL) LIMIT 1[0m
+  [4;36;1mAnswer Exists (0.1ms)[0m   [0;1mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" IS NULL AND "answers".question_id = 1) LIMIT 1[0m
+  [4;35;1mAnswer Exists (0.1ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers".question_id = 1) LIMIT 1[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-28 06:49:11', 1, 1, 'This is another test.', '2009-04-28 06:49:11')[0m
+  [4;35;1mAnswer Exists (0.3ms)[0m   [0mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers".question_id = 1) LIMIT 1[0m
+  [4;36;1mAnswer Exists (0.2ms)[0m   [0;1mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers".question_id = 2) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.8ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-28 06:49:30', 2, 1, 'This is another test.', '2009-04-28 06:49:30')[0m
+  [4;36;1mAnswer Exists (0.2ms)[0m   [0;1mSELECT "answers".id FROM "answers" WHERE ("answers"."user_id" = 1 AND "answers".question_id = 3) LIMIT 1[0m
+  [4;35;1mAnswer Create (0.3ms)[0m   [0mINSERT INTO "answers" ("updated_at", "question_id", "user_id", "contents", "created_at") VALUES('2009-04-28 06:49:36', 3, 1, 'This is another test.', '2009-04-28 06:49:36')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mQuestion Load (0.1ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 2) [0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."id" = 2) [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 3) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mDebateable Load (0.1ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Exists (0.1ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" IS NULL AND "debateables".user_id = 1 AND "debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Create (0.3ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-28 06:50:43', 'Answer', 3, 1, '2009-04-28 06:50:43')[0m
+  [4;36;1mDebateable Exists (0.3ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 1 AND "debateables".debated_id = 3 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 16) LIMIT 1[0m
+  [4;35;1mDebateable Update (0.3ms)[0m   [0mUPDATE "debateables" SET "score" = 1, "updated_at" = '2009-04-28 06:50:43' WHERE "id" = 16[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."id" = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ ORDER BY 
+ debated_score[0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ ORDER BY 
+ debated_score[0m
+  [4;35;1mAnswer Load (0.9ms)[0m   [0m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ ORDER BY 
+ debated_score[0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ ORDER BY 
+ debated_score[0m
+  [4;36;1mAnswer Load (1.8ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers
+ LEFT OUTER JOIN 
+ debateables ON debateables.debated_id = answers.id AND debateables.debated_type = 'Answer'
+ ORDER BY 
+ debated_score[0m
+  [4;36;1mAnswer Load (68.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score[0m
+  [4;35;1mAnswer Load (0.9ms)[0m   [0m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score[0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 2) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mDebateable Load (0.1ms)[0m   [0mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Exists (0.1ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" IS NULL AND "debateables".user_id = 1 AND "debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Create (0.4ms)[0m   [0mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-28 07:32:25', 'Answer', 2, 1, '2009-04-28 07:32:25')[0m
+  [4;36;1mDebateable Exists (0.2ms)[0m   [0;1mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = -1 AND "debateables".user_id = 1 AND "debateables".debated_id = 2 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 17) LIMIT 1[0m
+  [4;35;1mDebateable Update (0.2ms)[0m   [0mUPDATE "debateables" SET "score" = -1, "updated_at" = '2009-04-28 07:32:25' WHERE "id" = 17[0m
+  [4;36;1mAnswer Load (1.4ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.5ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mAnswer Load (1.7ms)[0m   [0m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 OFFSET 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.1ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 OFFSET 2[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 2 OFFSET 2[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 2 
+ OFFSET 2[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 
+ OFFSET 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.1ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers, 
+ debateables 
+ WHERE
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.6ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.4ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.4ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.1ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score ASC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (1.5ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score ASC
+ 
+ [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 3 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.1ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.4ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ 
+ [0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.9ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 1 
+ [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.0ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 2 
+ [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.9ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 2 
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.0ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score DESC
+ LIMIT 3 
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.2ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score ASC
+ LIMIT 3 
+ [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.1ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score asc
+ LIMIT 3 
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.9ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score desc
+ LIMIT 3 
+ [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.1ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS debated_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ AND target_objects.Question_id = 1
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ debated_score desc
+ LIMIT 3 
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAnswer Load (0.6ms)[0m   [0;1mSELECT * FROM "answers" LIMIT 1[0m
+  [4;35;1mAnswer Load (1.5ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ 
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mAnswer Load (1.2ms)[0m   [0;1m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ 
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;35;1mAnswer Load (1.3ms)[0m   [0m SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ 
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 1 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mAnswer Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near ".": syntax error: SELECT 
+ target_objects.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS target_objects.total_score 
+ FROM 
+ answers target_objects, 
+ debateables debateables 
+ WHERE
+ debateables.debated_id = target_objects.id AND
+ debateables.debated_type = 'Answer'
+ 
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ target_objects.total_score DESC
+ 
+ [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" LIMIT 1[0m
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-04-29 14:16:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-04-29 14:16:16) [GET]
+  [4;35;1mQuestion Load (0.6ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/questions/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-04-29 14:16:35) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/login/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-04-29 14:16:41) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"cRPyg5htI9vUcL4giyRzkpbAnpfaMJsDMJqKbZUsOtU=", "login"=>"jimjeffers", "password"=>"944turbo"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'jimjeffers' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'jimjeffers' from 127.0.0.1 at Wed Apr 29 21:16:41 UTC 2009
+Rendering sessions/new
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://localhost/session]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-29 14:16:45) [GET]
+Rendering users/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0m SELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT * FROM USERS[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id
+ ORDER BY 
+ total_score DESC
+ 
+ [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type, 
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.5ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."user_id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ answers.id[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ answers.id[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ answers.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ answers.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.debated_id[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ answers.id[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: near "GROUP_BY": syntax error: SELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP_BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'
+ GROUP BY
+ debateables.id[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".user_id = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".user_id = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mDebateable Load (0.2ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 1) AND ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Exists (0.1ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 1 AND "debateables".debated_id = 2 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 17) LIMIT 1[0m
+  [4;36;1mDebateable Update (0.3ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "updated_at" = '2009-04-29 23:46:11' WHERE "id" = 17[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.2ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".user_id = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mDebateable Load (0.1ms)[0m   [0;1mSELECT * FROM "debateables" WHERE ("debateables"."user_id" = 3) AND ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;35;1mDebateable Exists (0.1ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" IS NULL AND "debateables".user_id = 3 AND "debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') LIMIT 1[0m
+  [4;36;1mDebateable Create (0.6ms)[0m   [0;1mINSERT INTO "debateables" ("score", "updated_at", "debated_type", "debated_id", "user_id", "created_at") VALUES(NULL, '2009-04-29 23:46:17', 'Answer', 2, 3, '2009-04-29 23:46:17')[0m
+  [4;35;1mDebateable Exists (0.3ms)[0m   [0mSELECT "debateables".id FROM "debateables" WHERE ("debateables"."score" = 1 AND "debateables".user_id = 3 AND "debateables".debated_id = 2 AND "debateables".debated_type = 'Answer' AND "debateables".id <> 18) LIMIT 1[0m
+  [4;36;1mDebateable Update (0.3ms)[0m   [0;1mUPDATE "debateables" SET "score" = 1, "updated_at" = '2009-04-29 23:46:17' WHERE "id" = 18[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("debateables".score) AS sum_score FROM "debateables" WHERE ("debateables".debated_id = 2 AND "debateables".debated_type = 'Answer') [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT
+ answers.*,
+ debateables.id,
+ debateables.debated_id,
+ debateables.debated_type,
+ debateables.score,
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such column: score: SELECT sum(score) AS sum_score FROM "answers" WHERE ("answers".user_id = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT
+ sum(debateables.score) AS total_score 
+ FROM 
+ answers answers, 
+ debateables debateables 
+ WHERE
+ answers.user_id = 1 AND
+ debateables.debated_id = answers.id AND
+ debateables.debated_type = 'Answer'[0m
