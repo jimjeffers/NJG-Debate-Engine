@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :comments
+
+  map.resources :categories
+
+  map.resources :articles
+
   map.resources :questions do |question|
     question.resources :answers
   end

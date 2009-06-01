@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090427032919) do
+ActiveRecord::Schema.define(:version => 20090601205921) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -18,6 +18,53 @@ ActiveRecord::Schema.define(:version => 20090427032919) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "excerpt"
+    t.text     "content"
+    t.boolean  "pro"
+    t.string   "state"
+    t.string   "guid"
+    t.string   "revision_of"
+    t.integer  "comment_count"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "sport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["sport_id"], :name => "index_categories_on_sport_id"
+
+  create_table "categorizations", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categorizations", ["article_id"], :name => "index_categorizations_on_article_id"
+  add_index "categorizations", ["category_id"], :name => "index_categorizations_on_category_id"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "article_id"
+    t.string   "author"
+    t.string   "url"
+    t.string   "ip"
+    t.string   "email"
+    t.string   "state"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
 
   create_table "debateables", :force => true do |t|
     t.integer  "user_id"
@@ -34,15 +81,6 @@ ActiveRecord::Schema.define(:version => 20090427032919) do
   create_table "questions", :force => true do |t|
     t.integer  "sport_id"
     t.text     "contents"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ratings", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type", :default => "Answer"
-    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
