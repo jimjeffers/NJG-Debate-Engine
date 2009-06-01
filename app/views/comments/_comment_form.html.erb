@@ -1,0 +1,24 @@
+  <fieldset>
+    <legend>Your Details</legend>
+    <ul class="form">
+      <li>
+        <%= f.label :author, "Author" %>
+        <%= f.text_field :author %>
+      </li>
+      <li>
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <%= f.label :url, "Url" %>
+        <%= f.text_field :url %>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Comment Content</legend>
+    <ul class="form">
+      <%= f.label :content, "Content" %>
+      <%= f.text_field :content %>
+    </ul>
+  </fieldset>

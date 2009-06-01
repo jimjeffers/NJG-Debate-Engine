@@ -2311,3 +2311,536 @@ Migrating to CreateComments (20090601205921)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sport_id" integer, "contents" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090424203143')[0m
+Migrating to CreateAnswers (20090425072906)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "user_id" integer, "contents" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090425072906')[0m
+Migrating to CreateSports (20090425073123)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090425073123')[0m
+Migrating to DebateableMigration (20090426182347)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "debateables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "debated_id" integer, "debated_type" varchar(32), "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_debateables_on_user_id" ON "debateables" ("user_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_debateables_on_debated_id_and_debated_type" ON "debateables" ("debated_id", "debated_type")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090426182347')[0m
+Migrating to CreateUsers (20090427032919)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427032919')[0m
+Migrating to CreateArticles (20090601204511)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" text, "content" text, "pro" boolean, "state" varchar(255), "guid" varchar(255), "revision_of" varchar(255), "published_on" datetime, "comment_count" integer, "author_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601204511')[0m
+Migrating to CreateCategories (20090601204519)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sport_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_categories_on_sport_id" ON "categories" ("sport_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601204519')[0m
+Migrating to CreateCategorizations (20090601204528)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "categorizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category_id" integer, "article_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_categorizations_on_category_id" ON "categorizations" ("category_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_categorizations_on_article_id" ON "categorizations" ("article_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601204528')[0m
+Migrating to CreateComments (20090601205921)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "article_id" integer, "user_id" integer, "author" varchar(255), "url" varchar(255), "ip" varchar(255), "email" varchar(255), "state" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_comments_on_article_id" ON "comments" ("article_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601205921')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("articles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categories")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_categories_on_sport_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorizations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_categorizations_on_article_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_categorizations_on_category_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_comments_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_comments_on_article_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("debateables")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'jim@notjustagame.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'jimjeffers') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'jim@notjustagame.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "remember_token_expires_at", "activation_code", "remember_token", "login", "email", "created_at") VALUES('', '3b1da63d2397c02afb4299af26b14dbdacd8f04a', '2009-06-01 21:12:49', NULL, 'dcb013e43a68ebd6d93aff6c2a7e8a7c6a5ebfba', NULL, 'c2bd3a9e53946f9f1c1865a472b3e860d42d19e1', NULL, 'jimjeffers', 'jim@notjustagame.com', '2009-06-01 21:12:49')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'jimjeffers' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'jim@notjustagame.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-06-01 21:13:43', "updated_at" = '2009-06-01 21:13:45' WHERE "id" = 1[0m
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:29:38) [GET]
+  [4;36;1mArticle Load (0.8ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 164ms (View: 111, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 14:29:40) [GET]
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (1.8ms)
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 14:30:23) [POST]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"McNabb Takes it to the Top!", "excerpt"=>"This is the excerpt for the article. It shouldn't be longer than a paragraph.", "content"=>"This is the actual content for the article. It should be as long as we need it to be."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mArticle Create (0.6ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "comment_count", "excerpt", "content", "author_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-01 21:30:23', 'McNabb Takes it to the Top!', 't', NULL, NULL, 'This is the excerpt for the article. It shouldn''t be longer than a paragraph.', 'This is the actual content for the article. It should be as long as we need it to be.', NULL, NULL, NULL, NULL, '2009-06-01 21:30:23')[0m
+Redirected to http://localhost:3000/articles/1
+Completed in 52ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:30:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #3 of app/views/articles/show.html.erb:
+1: <h1><%= @article.title %></h1>
+2: 
+3: <h2>Written by <%= @article.user.login %> on <%= @article.published_on %></h2>
+4: 
+5: <h3>Excerpt</h3>
+6: <%= @article.excerpt %>
+
+    app/views/articles/show.html.erb:3
+    app/controllers/articles_controller.rb:18:in `show'
+
+Rendered rescues/_trace (102.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:31:00) [GET]
+  Parameters: {"id"=>"1"}
+
+NoMethodError (undefined method `login_required' for #<ArticlesController:0x2168bac>):
+  
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:31:32) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/articles/1]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-06-01 14:31:32) [GET]
+Rendering sessions/new
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-06-01 14:32:52) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w=", "login"=>"jimjeffers", "password"=>"944turbo"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'jimjeffers' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/articles/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:32:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #3 of app/views/articles/show.html.erb:
+1: <h1><%= @article.title %></h1>
+2: 
+3: <h2>Written by <%= @article.user.login %> on <%= @article.published_on %></h2>
+4: 
+5: <h3>Excerpt</h3>
+6: <%= @article.excerpt %>
+
+    app/views/articles/show.html.erb:3
+    app/controllers/articles_controller.rb:20:in `show'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:32:56) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title) on line #9 of app/views/articles/index.html.erb:
+6: 
+7: <% @articles.each do |article| %>
+8:   <tr>
+9:     <td><%= @article.title %></td>
+10:     <td><%= @article.state %></td>
+11:     <td><%= link_to @article.user.login, @article.user %></td>
+12:     <td><%= link_to 'Show', article %></td>
+
+    app/views/articles/index.html.erb:9
+    app/views/articles/index.html.erb:7:in `each'
+    app/views/articles/index.html.erb:7
+    app/controllers/articles_controller.rb:9:in `index'
+
+Rendered rescues/_trace (44.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:33:13) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title) on line #9 of app/views/articles/index.html.erb:
+6: 
+7: <% @articles.each do |article| %>
+8:   <tr>
+9:     <td><%= @article.title %></td>
+10:     <td><%= @article.state %></td>
+11:     <td><%= link_to @article.user.login, @article.user %></td>
+12:     <td><%= link_to 'Show', article %></td>
+
+    app/views/articles/index.html.erb:9
+    app/views/articles/index.html.erb:7:in `each'
+    app/views/articles/index.html.erb:7
+    app/controllers/articles_controller.rb:9:in `index'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 14:33:15) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (0.7ms)
+Completed in 20ms (View: 4, DB: 0) | 200 OK [http://localhost/articles/new]
+  [4;36;1mArticle Load (0.8ms)[0m   [0;1mSELECT * FROM "articles" [0m
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:33:57) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title) on line #9 of app/views/articles/index.html.erb:
+6: 
+7: <% @articles.each do |article| %>
+8:   <tr>
+9:     <td><%= @article.title %></td>
+10:     <td><%= @article.state %></td>
+11:     <td><%= link_to @article.user.login, @article.user %></td>
+12:     <td><%= link_to 'Show', article %></td>
+
+    app/views/articles/index.html.erb:9
+    app/views/articles/index.html.erb:7:in `each'
+    app/views/articles/index.html.erb:7
+    app/controllers/articles_controller.rb:9:in `index'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:34:17) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #11 of app/views/articles/index.html.erb:
+8:   <tr>
+9:     <td><%= article.title %></td>
+10:     <td><%= article.state %></td>
+11:     <td><%= link_to article.user.login, article.user %></td>
+12:     <td><%= link_to 'Show', article %></td>
+13:     <td><%= link_to 'Edit', edit_article_path(article) %></td>
+14:     <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/articles/index.html.erb:11
+    app/views/articles/index.html.erb:7:in `each'
+    app/views/articles/index.html.erb:7
+    app/controllers/articles_controller.rb:9:in `index'
+
+Rendered rescues/_trace (42.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" LIMIT 1[0m
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" LIMIT 1[0m
+  [4;35;1mArticle Update (0.6ms)[0m   [0mUPDATE "articles" SET "author_id" = 1, "updated_at" = '2009-06-01 21:34:49' WHERE "id" = 1[0m
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:36:08) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 53ms (View: 17, DB: 1) | 200 OK [http://localhost/articles/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-06-01 14:36:12) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: activate, create, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-06-01 14:36:19) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: activate, create, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2009-06-01 14:36:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+Rendered articles/_article_form (1.8ms)
+Completed in 29ms (View: 11, DB: 1) | 200 OK [http://localhost/articles/1/edit]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:36:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 86ms (View: 72, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 14:36:32) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (0.7ms)
+Completed in 21ms (View: 6, DB: 0) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 14:37:24) [POST]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"GM Goes Bankrupt!", "excerpt"=>"Headed towards doom and gloom. GM drops into the recession as an absurdly odd and desperate company at odds with it's iconic and legendary immortal status.", "content"=>"All things come to an end sometimes."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Create (0.5ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "comment_count", "excerpt", "content", "author_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-01 21:37:24', 'GM Goes Bankrupt!', 'f', NULL, NULL, 'Headed towards doom and gloom. GM drops into the recession as an absurdly odd and desperate company at odds with it''s iconic and legendary immortal status.', 'All things come to an end sometimes.', NULL, NULL, NULL, NULL, '2009-06-01 21:37:24')[0m
+Redirected to http://localhost:3000/articles/2
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:37:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.login) on line #3 of app/views/articles/show.html.erb:
+1: <h1><%= @article.title %></h1>
+2: 
+3: <h2>Written by <%= @article.user.login %> on <%= @article.published_on %></h2>
+4: 
+5: <h3>Excerpt</h3>
+6: <%= @article.excerpt %>
+
+    app/views/articles/show.html.erb:3
+    app/controllers/articles_controller.rb:20:in `show'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+  [4;36;1mArticle Update (0.4ms)[0m   [0;1mUPDATE "articles" SET "author_id" = 1, "updated_at" = '2009-06-01 21:39:20' WHERE "id" = 2[0m
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:39:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 50ms (View: 13, DB: 1) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:39:31) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 88ms (View: 11, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 14:39:34) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (1.7ms)
+Completed in 27ms (View: 9, DB: 0) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 14:39:55) [POST]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"Ok Ok Ok", "excerpt"=>"This is just a test. Let's see if it works!", "content"=>"This is just a test. Let's see if we can do this."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Create (0.4ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "comment_count", "excerpt", "content", "author_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-01 21:39:55', 'Ok Ok Ok', 'f', NULL, NULL, 'This is just a test. Let''s see if it works!', 'This is just a test. Let''s see if we can do this.', 1, NULL, NULL, NULL, '2009-06-01 21:39:55')[0m
+Redirected to http://localhost:3000/articles/3
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 14:39:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 3) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 94ms (View: 6, DB: 1) | 200 OK [http://localhost/articles/3]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 14:40:00) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:47:58) [GET]
+
+ActionController::RoutingError (No route matches "/news/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:48:47) [GET]
+
+ActionController::RoutingError (No route matches "/news/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:48:48) [GET]
+
+ActionController::RoutingError (No route matches "/news/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 14:49:15) [GET]
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM "articles" [0m
+
+ActionView::MissingTemplate (Missing template news/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 14:49:33) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+
+NoMethodError (undefined method `site' for #<NewsController:0x1ff9ed8>):
+  
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 14:50:07) [GET]
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 46ms (View: 39, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:50:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:50:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:50:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 14:50:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

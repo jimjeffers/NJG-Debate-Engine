@@ -2,10 +2,15 @@
 
 <% form_for(@comment) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'comment_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Update Comment</legend>
+    <ul class="form">
+      <li>
+        <%= f.submit 'Update Comment' %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Show', @comment %> |

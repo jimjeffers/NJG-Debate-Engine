@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :login_required
+  
   # GET /articles
   # GET /articles.xml
   def index
@@ -43,7 +45,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
 
     respond_to do |format|
-      if @article.save
+      if current_user.articles << @article
         flash[:notice] = 'Article was successfully created.'
         format.html { redirect_to(@article) }
         format.xml  { render :xml => @article, :status => :created, :location => @article }

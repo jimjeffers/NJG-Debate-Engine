@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
     t.string   "state"
     t.string   "guid"
     t.string   "revision_of"
+    t.datetime "published_on"
     t.integer  "comment_count"
     t.integer  "author_id"
     t.datetime "created_at"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
 
   create_table "comments", :force => true do |t|
     t.integer  "article_id"
+    t.integer  "user_id"
     t.string   "author"
     t.string   "url"
     t.string   "ip"
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
   end
 
   add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "debateables", :force => true do |t|
     t.integer  "user_id"

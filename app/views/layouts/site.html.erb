@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= @page_title || 'NotJustaGame' %></title>
+    <meta name="keywords" content="content"/>
+    <meta name="description" content="content"/>
+    <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/stylesheets/layout.css" type="text/css" media="screen"  charset="utf-8"/>
+  </head>
+  <body id="index">
+    <div id="branding">
+      <h1 id="site_title"><a href="/"><img src="/images/brand/njg_logo.png" width="343" height="80" alt="NotJustaGame - For those who take sports seriously." /></a></h1>
+    </div>
+    <ul id="primary_navigation" class="site_navigation">
+      <li><a href="#"><img src="images/ui/nav/questions.png" width="92" height="30" alt="Questions"/></a></li>
+      <li><a href="#"><img src="images/ui/nav/picks.png" width="53" height="30" alt="Picks"/></a></li>
+      <li><a href="#"><img src="images/ui/nav/articles.png" width="71" height="31" alt="Articles"/></a></li>
+      <li><a href="#"><img src="images/ui/nav/guides.png" width="61" height="30" alt="Guides"/></a></li>
+    </ul>
+    <div id="page_content">
+      <div id="primary_content">
+        <%= yield %>
+      </div>
+      <div id="footnotes_content">
+        <div id="inline_sitemap">
+          <ul id="questions_inline_map">
+            <h2>Questions</h2>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Top 10</a></li>
+            <li><a href="#">Unanswered</a></li>
+            <li><a href="#">Your Questions</a></li>
+            <li><a href="#">Best Responses</a></li>
+            <li><a href="#">Worst Responses</a></li>
+          </ul>
+          <ul id="picks_inline_map">
+            <h2>Picks</h2>
+            <li><a href="#">Fantasy Football</a></li>
+            <li><a href="#">Fantasy Basketball</a></li>
+            <li><a href="#">Fantasy Baseball</a></li>
+          </ul>
+          <ul id="articles_inline_map">
+            <h2>Articles</h2>
+            <li><a href="#">Football</a></li>
+            <li><a href="#">Basketball</a></li>
+            <li><a href="#">Baseball</a></li>
+          </ul>
+          <ul id="guides_inline_map">
+            <h2>Guides</h2>
+            <li><a href="#">Football</a></li>
+            <li><a href="#">Basketball</a></li>
+            <li><a href="#">Baseball</a></li>
+          </ul>
+        </div>
+        <div id="obligatory_stuff">
+          <ul id="legal_navigation">
+            <li id="terms_of_service"><a href="#">Terms of Service</a></li>
+            <li id="privacy"><a href="#">Privacy</a></li>
+          </ul>
+          <p id="copyright_notice">Copyright &copy; 2002-<%= Time.now.year %> NotJustaGame LLC.,<br/>
+          All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

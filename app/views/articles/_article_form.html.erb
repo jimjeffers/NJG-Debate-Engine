@@ -1,0 +1,26 @@
+  <fieldset>
+    <legend>Article Details</legend>
+    <ul class="form">
+      <li>
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <%= f.label :pro, "Pro" %>
+        <%= f.check_box :pro %>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Content</legend>
+    <ul class="form">
+      <li>
+        <%= f.label :excerpt, "Excerpt" %>
+        <%= f.text_area :excerpt %>
+      </li>
+      <li>
+        <%= f.label :content, "Content" %>
+        <%= f.text_area :content %>
+      </li>
+    </ul>
+  </fieldset>

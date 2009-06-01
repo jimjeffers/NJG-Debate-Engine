@@ -2,10 +2,15 @@
 
 <% form_for(@article) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'article_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Save Your Changes</legend>
+    <ul class="form">
+      <li>
+        <%= f.submit 'Update Article' %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Show', @article %> |

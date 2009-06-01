@@ -6,6 +6,9 @@
 
 <% @articles.each do |article| %>
   <tr>
+    <td><%= article.title %></td>
+    <td><%= article.state %></td>
+    <td><%= link_to article.user.login, article.user %></td>
     <td><%= link_to 'Show', article %></td>
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
     <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
