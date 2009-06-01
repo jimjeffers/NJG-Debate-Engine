@@ -1,0 +1,323 @@
+/*   
+Theme Name: NotJustaGame
+Theme URI: http://notjustagame.com
+Description: NotJustaGame Layout & Theme.
+Author: Jim Jeffers
+Author URI: http://notjustagame.com
+Version: 1.0
+.
+For exclusive use on NotJustaGame.com
+.
+*/
+/*  KEEP OUR CSS CLEAN
+    Some guidelines to follow:
+    1. Break code down into sections.
+    2. Keep your rules alphabetically sorted.
+    3. Only put one selector per line for a block of rules that apply to multiple selectors.
+    4. Indent your rules, only one rule per line.
+        
+        example:
+        
+        element#id,
+        element.class {
+            rule1: value;
+            rule2: value;
+            top: value;
+        }
+*/
+
+/* =BODY
+   ------------------------------------------------------ */ 
+   body {
+      background: #1c8936 url(../images/ui/page_background.png) repeat-y top center;
+      font: 1em/1.5em "Trebuchet MS", Verdana, sans-serif;
+      padding: 0;
+      position: relative;
+   }
+
+/* =BASE_ELEMENTS
+   ------------------------------------------------------ */
+   
+   a {
+      color: #f60;
+   }
+   
+   a:hover {
+      color: #f90;
+   }
+   
+   a:active {
+      color: #fc0;
+   }
+   
+/* =BRANDING
+   ------------------------------------------------------ */   
+   #branding {
+      background: url('../images/ui/page_top_background.jpg') no-repeat scroll -1px top;
+      height: 307px;
+      margin: 0 auto;
+      position: relative;
+      width: 960px;
+   }
+   
+   #branding #site_title {
+      left: 10px;
+      position: absolute;
+      top: 40px;
+   }
+
+/* =PRIMARY_NAVIGATION
+   ------------------------------------------------------ */
+   #primary_navigation {
+      position: absolute;
+      left: 620px;
+      top: 60px;
+   }
+   
+   #primary_navigation li {
+      display: block;
+      float: left;
+      width: 112px;
+   }
+   
+   #primary_navigation li a img {
+      display: block;
+      margin: 10px auto;
+   }
+   
+   #primary_navigation li:hover {
+      background: url('../images/ui/nav/selected_bg.png') no-repeat scroll top center;
+      width: 112px;
+      height: 47px;
+   }
+   
+/* =PRIMARY_CONTENT
+   ------------------------------------------------------ */
+   #page_content {
+      position: absolute;
+      top: 130px;
+      width: 100%;
+   }
+   
+   #primary_content {
+      background: url('../images/ui/page_bottom_background.png') no-repeat scroll -1px bottom;
+      margin: 0 auto;
+      min-height: 600px;
+      padding: 20px 20px 50px 20px;
+      position: relative;
+      width: 920px;
+   }
+   
+   #primary_content h1#mast_head_title,
+   #primary_content p#mast_head_date {
+      font-size: 0.75em;
+      font-weight: normal;
+   }
+   
+   #primary_content h1#mast_head_title {
+      border-bottom: 3px double #bfbfbf;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+   }
+   
+   p#mast_head_date {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+   }
+
+/* =CONTENT_BASED_NAVIGATION
+   ------------------------------------------------------ */
+   .content_based_navigation {
+      border-right: 1px solid #e5e5e5;
+      font-size: 0.675em;
+      float: left;
+      line-height: 1.25em;
+      text-transform: uppercase;
+      width: 115px;
+      padding-right: 10px;
+   }
+   
+   .content_based_navigation h2 {
+      padding-top: 10px;
+   }
+   
+   .content_based_navigation li {
+      padding: 2px 0;
+   }
+
+/* =ARTICLES
+   ------------------------------------------------------ */
+   #preview_articles {
+      border-right: 1px solid #e5e5e5;
+      float: left;
+      margin-left: 10px;
+      padding-right: 10px;
+      width: 285px;
+   }
+   
+   #preview_articles .article {
+      margin: 0 0 40px 0;
+   }
+   
+   .article_classification span {
+      color: #666;
+      display: block;
+      font-size: 0.75em;
+      line-height: 1em;
+      text-transform: uppercase;
+   }
+   
+   .article_classification span.sport {
+      border-right: 1px solid #666;
+      float: left;
+      padding-right: 5px;
+      margin-right: 5px;
+   }
+   
+   h2.article_title {
+      display: block;
+      font-size: 1.5em;
+      font-weight: normal;
+      line-height: 1.15em;
+   }
+   
+   #preview_articles .paid h2.article_title {
+      background: url(../images/ui/icons/pro.png) no-repeat 0 4px;
+      text-indent: 40px;
+   }
+   
+   #listed_articles .paid {
+      background: url(../images/ui/icons/pro.png) no-repeat 0 4px;
+   }
+   
+   .article_meta {
+      color: #666;
+      font-size: 0.675em;
+      line-height: 1.15em;
+      padding: 4px 0 0 0;
+   }
+   
+   .article_published_date,
+   .article_author_name {
+      text-transform: uppercase;
+   }
+   
+   .article_meta .article_published_date {
+      color: #393;
+   }
+   
+   .article_abstract {
+      font-size: 0.75em;
+      line-height: 1.25em;
+      margin: 15px 0;
+   }
+   
+   #listed_articles {
+      width: 435px;
+      padding-left: 450px;
+   }
+   
+   #listed_articles .article {
+      padding: 0 0 10px 40px;
+   }
+   
+   #listed_articles .article_classification {
+      float: left;
+      text-align: right;
+      width: 80px;
+   }
+   
+   #listed_articles .article_classification .sport {
+      display: block;
+      float: none;
+      border: none;
+      padding: 0;
+      font-weight: bold;
+   }
+   
+   #listed_articles .article_classification .category {
+      height: 1em;
+      overflow: hidden;
+   }
+   
+   #listed_articles .article_classification span {
+      line-height: 1.25em;
+   }
+   
+   #listed_articles .article_title {
+      font-size: 0.875em;
+      padding-left: 100px;
+   }
+   
+   #listed_articles .article_meta {
+      font-size: 0.6em;
+      padding: 2px 0 0 100px;
+   }
+   
+/* =INLINE_SITEMAP
+   ------------------------------------------------------ */
+   #footnotes_content {
+      background: #333232 url(../images/ui/bot_bar_background.jpg) repeat-x;
+      clear: both;
+      position: relative;
+      width: 100%;
+   }
+   
+   #inline_sitemap {
+      font-size: 0.75em;
+      line-height: 1.5em;
+      margin: 0 auto;
+      overflow: auto;
+      padding: 30px 0;
+      width: 960px;
+   }
+   
+   #inline_sitemap h2 {
+      color: #fff;
+      font-size: 1.15em;
+      line-height: 1em;
+      font-weight: normal;
+      padding: 0 0 10px 0;
+   }
+   
+   #inline_sitemap ul {
+      display: block;
+      float: left;
+      padding: 0 10px 0 0;
+      width: 140px;
+   }
+   
+   #obligatory_stuff {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: 180px;
+      width: 300px;
+   }
+   
+   #legal_navigation {
+      font-size: 0.8em;
+      line-height: 1em;
+      padding-bottom: 10px;
+   }
+   
+   #legal_navigation li {
+      display: block;
+   }
+   #legal_navigation #terms_of_service {
+      float: left;
+      border-right: 1px solid #fff;
+      margin-right: 10px;
+      padding-right: 10px;
+   }
+   
+   #legal_navigation a {
+      color: #fff;
+   }
+   
+   #obligatory_stuff p#copyright_notice {
+      color: #fff;
+      font-size: 0.75em;
+      line-height: 1.25em;
+   }

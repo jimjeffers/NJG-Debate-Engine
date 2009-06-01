@@ -2151,3 +2151,35 @@ Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
  answers.user_id = 1 AND
  debateables.debated_id = answers.id AND
  debateables.debated_type = 'Answer'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-31 16:15:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/page_background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-31 17:05:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/icons/pro.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-31 17:05:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/icons/pro.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-05-31 23:44:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/ui/bot_bar_background.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
