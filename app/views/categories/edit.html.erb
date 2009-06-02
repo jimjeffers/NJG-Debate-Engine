@@ -2,10 +2,15 @@
 
 <% form_for(@category) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'category_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Update Category</legend>
+    <ul class="form">
+      <li>
+        <%= f.submit 'Update Category' %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Show', @category %> |

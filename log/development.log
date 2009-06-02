@@ -3435,3 +3435,246 @@ Migrating to CreateComments (20090601205921)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:31:09) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-06-01 17:31:09) [GET]
+Rendering sessions/new
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-06-01 17:31:17) [GET]
+Rendering users/new
+Completed in 45ms (View: 34, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-06-01 17:31:29) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"944turbo", "password"=>"944turbo", "login"=>"jimjeffers", "email"=>"shout@jimjeffers.com"}, "commit"=>"Sign up", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'jimjeffers') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'shout@jimjeffers.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "remember_token_expires_at", "activation_code", "remember_token", "login", "email", "created_at") VALUES('', 'e12397ea06b78c0f894b7ef0e0ffbf19840662f6', '2009-06-02 00:31:29', NULL, '48b628a2c7a5319b7f02bab5e6ebb97a862cc4e5', NULL, '98cca290fb3861133bb7f8ea7eaf8df3d520750b', NULL, 'jimjeffers', 'shout@jimjeffers.com', '2009-06-02 00:31:29')[0m
+Redirected to http://localhost:3000/articles
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:31:30) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/articles]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-06-01 17:31:30) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-06-02 00:32:23', "updated_at" = '2009-06-02 00:32:23' WHERE "id" = 1[0m
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:34:13) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/articles/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-06-01 17:34:14) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-06-01 17:34:21) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w=", "login"=>"jimjeffers", "password"=>"944turbo"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'jimjeffers' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/articles/
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:34:21) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 24ms (View: 9, DB: 0) | 200 OK [http://localhost/articles/]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 17:34:23) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (2.6ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 17:34:41) [POST]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"This is a test.", "excerpt"=>"Ok. Would you believe me if I told you?", "content"=>"Nah."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (0.8ms)
+Completed in 22ms (View: 3, DB: 0) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 17:35:21) [POST]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"This is a test.", "excerpt"=>"Ok. Would you believe me if I told you?", "content"=>"Nah."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (0.8ms)
+Completed in 102ms (View: 3, DB: 0) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 17:35:46) [POST]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"This is a test.", "excerpt"=>"Ok. Would you believe me if I told you?", "content"=>"Nah."}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Create (0.5ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "comment_count", "excerpt", "category_id", "content", "user_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-02 00:35:46', 'This is a test.', 'f', NULL, NULL, 'Ok. Would you believe me if I told you?', NULL, 'Nah.', 1, NULL, NULL, NULL, '2009-06-02 00:35:46')[0m
+Redirected to http://localhost:3000/articles/1
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 17:35:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 8, DB: 1) | 200 OK [http://localhost/articles/1]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:35:50) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 17:35:52) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Rendered articles/_article_form (0.8ms)
+Completed in 22ms (View: 5, DB: 0) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 17:36:08) [POST]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"A premium article.", "excerpt"=>"Yes. Believe it. This is for real!", "content"=>"Can you see it?"}, "commit"=>"Create Article", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "comment_count", "excerpt", "category_id", "content", "user_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-02 00:36:08', 'A premium article.', 't', NULL, NULL, 'Yes. Believe it. This is for real!', NULL, 'Can you see it?', 1, NULL, NULL, NULL, '2009-06-02 00:36:08')[0m
+Redirected to http://localhost:3000/articles/2
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 17:36:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 24ms (View: 5, DB: 1) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 17:36:17) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-01 17:40:08) [GET]
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/categories
+Rendering categories/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2009-06-01 17:40:10) [GET]
+Rendering template within layouts/categories
+Rendering categories/new
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x20a2f74>) on line #4 of app/views/categories/_category_form.html.erb:
+1: <fieldset>
+2:     <legend>Category Name</legend>
+3:     <ul class="form">
+4:       <%= f.label :name, "Name" %>
+5:       <%= f.text_field :name %>
+6:     </ul>
+7:   </fieldset>
+
+    app/views/categories/_category_form.html.erb:4
+    app/views/categories/new.html.erb:5
+    app/views/categories/new.html.erb:3
+    app/controllers/categories_controller.rb:29:in `new'
+
+Rendered rescues/_trace (54.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2009-06-01 17:40:30) [GET]
+Rendering template within layouts/categories
+Rendering categories/new
+Rendered categories/_category_form (0.6ms)
+Completed in 79ms (View: 5, DB: 0) | 200 OK [http://localhost/categories/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+Migrating to CreateAnswers (20090425072906)
+Migrating to CreateSports (20090425073123)
+Migrating to DebateableMigration (20090426182347)
+Migrating to CreateUsers (20090427032919)
+Migrating to CreateArticles (20090601204511)
+Migrating to CreateCategories (20090601204519)
+Migrating to CreateCategorizations (20090601204528)
+Migrating to CreateComments (20090601205921)
+Migrating to CreateRoles (20090602004244)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "roles_users" ("role_id" integer, "user_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_roles_users_on_role_id" ON "roles_users" ("role_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_roles_users_on_user_id" ON "roles_users" ("user_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090602004244')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("articles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categories")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_categories_on_sport_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorizations")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_categorizations_on_article_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_categorizations_on_category_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_comments_on_user_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_comments_on_article_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("debateables")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("roles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("roles_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_roles_users_on_user_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_roles_users_on_role_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sports")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
