@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :login_required
-  
+  before_filter :categories, :only => [:new, :update, :create, :edit]
   # GET /articles
   # GET /articles.xml
   def index
@@ -83,5 +83,11 @@ class ArticlesController < ApplicationController
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  protected
+  # Grabs all existing categories.
+  def categories
+    @categories = Category.all
   end
 end

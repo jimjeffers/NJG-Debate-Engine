@@ -4617,3 +4617,761 @@ Migrating to AddCounters (20090602011005)
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sports")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing CategoriesController#new (for 127.0.0.1 at 2009-06-01 18:30:43) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSport Load (0.3ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" [0m
+Rendering template within layouts/categories
+Rendering categories/new
+Rendered categories/_category_form (2.1ms)
+Completed in 98ms (View: 5, DB: 1) | 200 OK [http://localhost/categories/new]
+
+
+Processing CategoriesController#create (for 127.0.0.1 at 2009-06-01 18:30:51) [POST]
+  Parameters: {"category"=>{"name"=>"Test Once Again", "sport_id"=>"1"}, "commit"=>"Create Category", "authenticity_token"=>"TMkxvAjvPhvXSfehbQN0VnMeOsTbOTXsnkuL1LNQx9w="}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSport Load (0.3ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Exists (0.2ms)[0m   [0mSELECT "categories".id FROM "categories" WHERE ("categories"."name" = 'Test Once Again' AND "categories".sport_id = 1) LIMIT 1[0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCategory Create (0.4ms)[0m   [0mINSERT INTO "categories" ("name", "updated_at", "sport_id", "articles_count", "created_at") VALUES('Test Once Again', '2009-06-02 01:30:51', 1, NULL, '2009-06-02 01:30:51')[0m
+Redirected to http://localhost:3000/categories/3
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/categories]
+
+
+Processing CategoriesController#show (for 127.0.0.1 at 2009-06-01 18:30:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 3) [0m
+Rendering template within layouts/categories
+Rendering categories/show
+Completed in 17ms (View: 1, DB: 1) | 200 OK [http://localhost/categories/3]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-01 18:30:52) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/categories
+Rendering categories/index
+Completed in 94ms (View: 4, DB: 1) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-01 18:31:55) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/categories
+Rendering categories/index
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (1.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Completed in 42ms (View: 21, DB: 2) | 200 OK [http://localhost/categories]
+
+
+Processing CategoriesController#edit (for 127.0.0.1 at 2009-06-01 18:36:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSport Load (0.3ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+Rendering template within layouts/categories
+Rendering categories/edit
+Rendered categories/_category_form (2.9ms)
+Completed in 28ms (View: 8, DB: 1) | 200 OK [http://localhost/categories/2/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 18:36:50) [GET]
+
+ActionController::RoutingError (No route matches "/article" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-01 18:36:55) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/categories
+Rendering categories/index
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mSport Load (0.3ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://localhost/categories]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 18:36:58) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2009-06-01 18:37:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.collect) on line #10 of app/views/articles/_article_form.html.erb:
+7:       </li>
+8:       <li>
+9:         <%= f.label :category_id, "Category" %>
+10:         <%= f.select :category_id, @categories.collect {|c| [ "[#{c.sport.name}] #{c.name}", c.id ] }, {:include_blank => 'Please Select'} %>
+11:       </li>
+12:       <li>
+13:         <%= f.label :pro, "Pro" %>
+
+    app/views/articles/_article_form.html.erb:10
+    app/views/articles/edit.html.erb:5
+    app/views/articles/edit.html.erb:3
+
+Rendered rescues/_trace (113.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2009-06-01 18:38:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+  [4;35;1mSport Load (0.3ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mSport Load (0.3ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Rendered articles/_article_form (10.9ms)
+Completed in 36ms (View: 15, DB: 1) | 200 OK [http://localhost/articles/2/edit]
+
+
+Processing ArticlesController#update (for 127.0.0.1 at 2009-06-01 18:38:20) [PUT]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"A premium article.", "excerpt"=>"Yes. Believe it. This is for real!", "category_id"=>"", "content"=>"Can you see it?"}, "commit"=>"Update Article", "authenticity_token"=>"6cqZv07SbbgsrEF6L2+2ltyRpIG5gHVDJr1ZC9iRH50=", "id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Redirected to http://localhost:3000/articles/2
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/articles/2]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:38:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:38:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 23ms (View: 6, DB: 1) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2009-06-01 18:38:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Rendered articles/_article_form (85.0ms)
+Completed in 112ms (View: 89, DB: 2) | 200 OK [http://localhost/articles/2/edit]
+
+
+Processing ArticlesController#update (for 127.0.0.1 at 2009-06-01 18:38:49) [PUT]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"A premium article.", "excerpt"=>"Yes. Believe it. This is for real!", "category_id"=>"", "content"=>"Can you see it?"}, "commit"=>"Update Article", "authenticity_token"=>"6cqZv07SbbgsrEF6L2+2ltyRpIG5gHVDJr1ZC9iRH50=", "id"=>"2"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Rendered articles/_article_form (9.5ms)
+Completed in 42ms (View: 12, DB: 2) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#update (for 127.0.0.1 at 2009-06-01 18:38:54) [PUT]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"A premium article.", "excerpt"=>"Yes. Believe it. This is for real!", "category_id"=>"2", "content"=>"Can you see it?"}, "commit"=>"Update Article", "authenticity_token"=>"6cqZv07SbbgsrEF6L2+2ltyRpIG5gHVDJr1ZC9iRH50=", "id"=>"2"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+  [4;36;1mArticle Update (0.4ms)[0m   [0;1mUPDATE "articles" SET "category_id" = 2, "updated_at" = '2009-06-02 01:38:54' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/articles/2
+Completed in 29ms (DB: 2) | 302 Found [http://localhost/articles/2]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:38:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 108ms (View: 7, DB: 1) | 200 OK [http://localhost/articles/2]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 18:38:56) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 10, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#edit (for 127.0.0.1 at 2009-06-01 18:38:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/edit
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Rendered articles/_article_form (9.2ms)
+Completed in 36ms (View: 13, DB: 1) | 200 OK [http://localhost/articles/1/edit]
+
+
+Processing ArticlesController#update (for 127.0.0.1 at 2009-06-01 18:39:02) [PUT]
+  Parameters: {"article"=>{"pro"=>"0", "title"=>"This is a test.", "excerpt"=>"Ok. Would you believe me if I told you?", "category_id"=>"1", "content"=>"Nah."}, "commit"=>"Update Article", "authenticity_token"=>"6cqZv07SbbgsrEF6L2+2ltyRpIG5gHVDJr1ZC9iRH50=", "id"=>"1"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+  [4;35;1mArticle Update (0.5ms)[0m   [0mUPDATE "articles" SET "category_id" = 1, "updated_at" = '2009-06-02 01:39:02' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/articles/1
+Completed in 30ms (DB: 2) | 302 Found [http://localhost/articles/1]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:39:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/articles/1]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:41:12) [GET]
+  [4;35;1mArticle Load (1.1ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (97.4ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.5ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 113ms (View: 105, DB: 2) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:41:14) [GET]
+  [4;36;1mArticle Load (1.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (25.1ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.7ms)
+Rendered news/_article_synapse (0.2ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:46:55) [GET]
+  [4;35;1mSport Load (1.3ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+
+SyntaxError (/Users/jim/Sites/NJG/NJG-Debate-Engine/app/models/user.rb:5: odd number list for Hash):
+  app/controllers/news_controller.rb:15:in `get_meta'
+
+Rendered rescues/_trace (113.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:54:49) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/jim/Sites/NJG/NJG-Debate-Engine/app/models/user.rb:5: odd number list for Hash):
+  lib/authenticated_system.rb:108:in `login_from_session'
+  lib/authenticated_system.rb:12:in `current_user'
+  lib/authenticated_system.rb:6:in `logged_in?'
+  lib/authenticated_system.rb:35:in `authorized?'
+  lib/authenticated_system.rb:53:in `login_required'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:55:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/articles/1]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:55:18) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (7.4ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 41ms (View: 18, DB: 3) | 200 OK [http://localhost/news]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:55:20) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (9.3ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 115ms (View: 17, DB: 3) | 200 OK [http://localhost/news]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-01 18:57:15) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/articles
+Rendering articles/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 9, DB: 1) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-06-01 18:57:17) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/articles
+Rendering articles/new
+  [4;36;1mSport Load (0.3ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+Rendered articles/_article_form (84.1ms)
+Completed in 109ms (View: 87, DB: 1) | 200 OK [http://localhost/articles/new]
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-06-01 18:57:37) [POST]
+  Parameters: {"article"=>{"pro"=>"1", "title"=>"My Favorite Article", "excerpt"=>"This is how we do it.", "category_id"=>"1", "content"=>"Ahhhhhh!"}, "commit"=>"Create Article", "authenticity_token"=>"6cqZv07SbbgsrEF6L2+2ltyRpIG5gHVDJr1ZC9iRH50="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Create (0.4ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "pro", "guid", "excerpt", "category_id", "content", "comments_count", "user_id", "revision_of", "published_on", "state", "created_at") VALUES('2009-06-02 01:57:37', 'My Favorite Article', 't', NULL, 'This is how we do it.', 1, 'Ahhhhhh!', NULL, 1, NULL, NULL, NULL, '2009-06-02 01:57:37')[0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCategory Update (0.1ms)[0m   [0mUPDATE "categories" SET "articles_count" = COALESCE("articles_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "articles_count" = COALESCE("articles_count", 0) + 1 WHERE ("id" = 1) [0m
+Redirected to http://localhost:3000/articles/3
+Completed in 37ms (DB: 2) | 302 Found [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-01 18:57:37) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 3) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/articles/3]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:57:42) [GET]
+  [4;35;1mSport Load (0.9ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (3.5ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 112ms (View: 16, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:58:06) [GET]
+  [4;36;1mSport Load (0.8ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.3ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (5.1ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 44ms (View: 21, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:58:08) [GET]
+  [4;35;1mSport Load (0.9ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (3.6ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.0ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 115ms (View: 17, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 18:58:33) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (3.8ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.0ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 41ms (View: 21, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:03:40) [GET]
+  [4;35;1mSport Load (0.9ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.6ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (4.0ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 123ms (View: 23, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:06:29) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.5ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.3ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 44ms (View: 20, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:06:43) [GET]
+  [4;35;1mSport Load (1.0ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (3.4ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.1ms)
+Rendered news/_article_synapse (0.2ms)
+Rendered news/_article_synapse (0.2ms)
+Rendered news/_article_synapse (0.2ms)
+Completed in 47ms (View: 23, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:06:47) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.0ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 40ms (View: 19, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:07:36) [GET]
+  [4;35;1mSport Load (1.1ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.2ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.0ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 46ms (View: 21, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:08:05) [GET]
+  [4;36;1mSport Load (2.1ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.0ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.2ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 40ms (View: 18, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:12:04) [GET]
+  [4;35;1mSport Load (0.9ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.5ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.8ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 39ms (View: 17, DB: 4) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:14:11) [GET]
+  [4;36;1mSport Load (0.9ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.6ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.5ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 118ms (View: 95, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:14:57) [GET]
+  [4;35;1mSport Load (0.9ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.1ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.9ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 43ms (View: 20, DB: 3) | 200 OK [http://localhost/news/]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 19:16:27) [GET]
+  [4;36;1mSport Load (1.1ms)[0m   [0;1mSELECT * FROM "sports" [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mSport Load (0.4ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (2.7ms)
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.0ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 119ms (View: 24, DB: 4) | 200 OK [http://localhost/news/]

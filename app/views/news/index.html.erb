@@ -1,33 +1,20 @@
-<h1 id="mast_head_title">Fantasy Sports News on NotJustaGame</h1>
+<h1 id="mast_head_title">Fantasy Sports News on NotJustaGame.</h1>
 <p id="mast_head_date"><%= full_date %></p>
 <ul class="content_based_navigation" id="articles_section_navigation">
   <h2>Sports</h2>
-  <li><a href="#">Football</a></li>
-  <li><a href="#">Basketball</a></li>
-  <li><a href="#">Baseball</a></li>
+  <% @sports.each do |sport| %>
+    <li><a href="#"><%= sport.name %></a></li>
+  <% end %>
+  
   <h2>Columns</h2>
-  <li><a href="#">1 Week Wonders</a></li>
-  <li><a href="#">Advertising</a></li>
-  <li><a href="#">Automatic / Don't Do It</a></li>
-  <li><a href="#">Fantasy Football </a></li>
-  <li><a href="#">Nba</a></li>
-  <li><a href="#">Predictions </a></li>
-  <li><a href="#">Promotions</a></li>
-  <li><a href="#">Quarterback</a></li>
-  <li><a href="#">Rankings</a></li>
-  <li><a href="#">Running Back</a></li>
-  <li><a href="#">Team Rankings</a></li>
-  <li><a href="#">Waiver Wire </a></li>
-  <li><a href="#">Weekly Analysis</a></li>
-  <li><a href="#">Wide Receiver</a></li>
-  <li><a href="#">You've Got to Be Kidding Me.</a></li>
+  <% @categories.each do |category| %>
+    <li><a href="#"><%= category.name %></a></li>
+  <% end %>
+  
   <h2>Authors</h2>
-  <li><a href="#">Zack Cimini</a></li>
-  <li><a href="#">Stephen Lane</a></li>
-  <li><a href="#">Kent Clark</a></li>
-  <li><a href="#">Jack Rogers</a></li>
-  <li><a href="#">Dana Harvey</a></li>
-  <li><a href="#">Max Rodriguez</a></li>
+  <% @authors.each do |author| %>
+    <li><a href="#"><%= author.login %></a></li>
+  <% end %>
 </ul>
 <ol id="preview_articles">
   <% @articles.each do |article| %>

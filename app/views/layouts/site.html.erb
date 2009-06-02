@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" charset="utf-8"/>
     <link rel="stylesheet" href="/stylesheets/layout.css" type="text/css" media="screen"  charset="utf-8"/>
   </head>
-  <body id="index">
+  <body id="<%= @body_id || controller.controller_name %>">
     <div id="branding">
       <h1 id="site_title"><a href="/"><img src="/images/brand/njg_logo.png" width="343" height="80" alt="NotJustaGame - For those who take sports seriously." /></a></h1>
     </div>
     <ul id="primary_navigation" class="site_navigation">
-      <li><a href="#"><img src="/images/ui/nav/questions.png" width="92" height="30" alt="Questions"/></a></li>
-      <li><a href="#"><img src="/images/ui/nav/picks.png" width="53" height="30" alt="Picks"/></a></li>
-      <li><a href="#"><img src="/images/ui/nav/articles.png" width="71" height="31" alt="Articles"/></a></li>
-      <li><a href="#"><img src="/images/ui/nav/guides.png" width="61" height="30" alt="Guides"/></a></li>
+      <li class="questions"><a href="/"><img src="/images/ui/nav/questions.png" width="92" height="30" alt="Questions"/></a></li>
+      <li class="picks"><a href="/"><img src="/images/ui/nav/picks.png" width="53" height="30" alt="Picks"/></a></li>
+      <li class="articles"><a href="/news"><img src="/images/ui/nav/articles.png" width="71" height="31" alt="Articles"/></a></li>
+      <li class="guides"><a href="/"><img src="/images/ui/nav/guides.png" width="61" height="30" alt="Guides"/></a></li>
     </ul>
     <div id="page_content">
       <div id="primary_content">
@@ -36,21 +36,30 @@
           </ul>
           <ul id="picks_inline_map">
             <h2>Picks</h2>
-            <li><a href="#">Fantasy Football</a></li>
-            <li><a href="#">Fantasy Basketball</a></li>
-            <li><a href="#">Fantasy Baseball</a></li>
+            <% if !@sports.blank? %>
+              <% for sport in @sports %>
+                <li><a href="#"><%= sport.name %></a></li>
+              <% end %>
+            <% else %>
+            <% end %>
           </ul>
           <ul id="articles_inline_map">
             <h2>Articles</h2>
-            <li><a href="#">Football</a></li>
-            <li><a href="#">Basketball</a></li>
-            <li><a href="#">Baseball</a></li>
+            <% if !@sports.blank? %>
+              <% for sport in @sports %>
+                <li><a href="#"><%= sport.name %></a></li>
+              <% end %>
+            <% else %>
+            <% end %>
           </ul>
           <ul id="guides_inline_map">
             <h2>Guides</h2>
-            <li><a href="#">Football</a></li>
-            <li><a href="#">Basketball</a></li>
-            <li><a href="#">Baseball</a></li>
+            <% if !@sports.blank? %>
+              <% for sport in @sports %>
+                <li><a href="#"><%= sport.name %></a></li>
+              <% end %>
+            <% else %>
+            <% end %>
           </ul>
         </div>
         <div id="obligatory_stuff">

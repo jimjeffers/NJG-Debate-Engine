@@ -85,7 +85,7 @@ For exclusive use on NotJustaGame.com
       margin: 10px auto;
    }
    
-   #primary_navigation li:hover {
+   #articles #primary_navigation li.articles {
       background: url('../images/ui/nav/selected_bg.png') no-repeat scroll top center;
       width: 112px;
       height: 47px;
@@ -188,7 +188,7 @@ For exclusive use on NotJustaGame.com
    }
    
    #listed_articles .paid {
-      background: url(../images/ui/icons/pro.png) no-repeat 0 4px;
+      background: url(../images/ui/icons/pro.png) no-repeat 0 2px;
    }
    
    .article_meta {

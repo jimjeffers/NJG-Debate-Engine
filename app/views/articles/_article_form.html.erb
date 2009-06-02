@@ -6,6 +6,10 @@
         <%= f.text_field :title %>
       </li>
       <li>
+        <%= f.label :category_id, "Category" %>
+        <%= f.select :category_id, @categories.collect {|c| [ "[#{c.sport.name}] #{c.name}", c.id ] }, {:include_blank => 'Please Select'} %>
+      </li>
+      <li>
         <%= f.label :pro, "Pro" %>
         <%= f.check_box :pro %>
       </li>
