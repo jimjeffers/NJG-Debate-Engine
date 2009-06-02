@@ -1,6 +1,5 @@
 class AddCounters < ActiveRecord::Migration
   def self.up
-    rename_column :articles, :comment_count, :comments_count
     add_column :users, :comments_count, :integer, :limit => 10
     add_column :users, :articles_count, :integer, :limit => 10
     add_column :users, :questions_count, :integer, :limit => 10
@@ -26,6 +25,5 @@ class AddCounters < ActiveRecord::Migration
     remove_column :users, :questions_count
     remove_column :users, :articles_count
     remove_column :users, :comments_count
-    rename_column :articles, :comments_count, :comment_count
   end
 end

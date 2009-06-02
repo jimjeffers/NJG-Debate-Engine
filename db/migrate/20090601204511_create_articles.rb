@@ -9,7 +9,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :guid
       t.string :revision_of
       t.datetime :published_on
-      t.integer :comment_count, :limit => 4
+      t.integer :comments_count, :limit => 4
       t.references :user
       t.references :category
       t.timestamps
