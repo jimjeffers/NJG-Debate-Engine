@@ -6,6 +6,7 @@
 
 <% @sports.each do |sport| %>
   <tr>
+    <td><%= sport.name %></td>
     <td><%= link_to 'Show', sport %></td>
     <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
     <td><%= link_to 'Destroy', sport, :confirm => 'Are you sure?', :method => :delete %></td>

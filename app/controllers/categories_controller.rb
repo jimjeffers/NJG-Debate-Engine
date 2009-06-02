@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  before_filter :login_required
+  before_filter :sports, :only => [:new, :edit, :update, :create]
+  
   # GET /categories
   # GET /categories.xml
   def index
@@ -14,7 +17,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.xml
   def show
     @category = Category.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @category }
@@ -25,7 +28,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new.xml
   def new
     @category = Category.new
-
+    @sports = Sport.all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @category }
@@ -34,6 +38,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @sports = Sport.all
     @category = Category.find(params[:id])
   end
 
@@ -81,5 +86,11 @@ class CategoriesController < ApplicationController
       format.html { redirect_to(categories_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  protected
+  # Retrieves all vailable sports in the database.
+  def sports
+    @sports = Sport.all
   end
 end

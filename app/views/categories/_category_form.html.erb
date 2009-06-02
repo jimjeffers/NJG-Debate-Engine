@@ -1,7 +1,13 @@
 <fieldset>
     <legend>Category Name</legend>
     <ul class="form">
-      <%= f.label :name, "Name" %>
-      <%= f.text_field :name %>
+      <li>
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :sport_id, "Sport" %>
+        <%= f.select :sport_id, @sports.collect {|s| [ s.name, s.id ] }, {:include_blank => 'Please Select'} %>
+      </li>
     </ul>
   </fieldset>

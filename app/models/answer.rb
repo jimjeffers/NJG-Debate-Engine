@@ -1,6 +1,6 @@
 class Answer < ActiveRecord::Base
-  belongs_to :question
-  belongs_to :user
+  belongs_to :question, :counter_cache => true
+  belongs_to :user, :counter_cache => true
   
   validates_presence_of :contents
   validates_presence_of :question_id

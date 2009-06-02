@@ -2,10 +2,15 @@
 
 <% form_for(@sport) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+  <%= render :partial => 'sport_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Create Sport</legend>
+    <ul class="form">
+      <li>
+        <%= f.submit 'Create New Sport' %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Back', sports_path %>

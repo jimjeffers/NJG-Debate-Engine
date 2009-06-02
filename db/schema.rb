@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090602004244) do
+ActiveRecord::Schema.define(:version => 20090602011005) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20090602004244) do
     t.string   "guid"
     t.string   "revision_of"
     t.datetime "published_on"
-    t.integer  "comment_count", :limit => 4
+    t.integer  "comments_count", :limit => 4
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at"
@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(:version => 20090602004244) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name",       :limit => 75
+    t.string   "name",           :limit => 75
     t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "articles_count", :limit => 10
   end
 
   add_index "categories", ["sport_id"], :name => "index_categories_on_sport_id"
@@ -87,7 +88,11 @@ ActiveRecord::Schema.define(:version => 20090602004244) do
     t.text     "contents"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",       :limit => 10
+    t.integer  "answers_count", :limit => 10
   end
+
+  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string "name"
@@ -105,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20090602004244) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "questions_count", :limit => 10
+    t.integer  "picks_count",     :limit => 10
   end
 
   create_table "users", :force => true do |t|
@@ -119,6 +126,11 @@ ActiveRecord::Schema.define(:version => 20090602004244) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
+    t.integer  "comments_count",            :limit => 10
+    t.integer  "articles_count",            :limit => 10
+    t.integer  "questions_count",           :limit => 10
+    t.integer  "picks_count",               :limit => 10
+    t.integer  "answers_count",             :limit => 10
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

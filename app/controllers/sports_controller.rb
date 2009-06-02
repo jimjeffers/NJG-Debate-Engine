@@ -1,4 +1,6 @@
 class SportsController < ApplicationController
+  before_filter :login_required
+  
   # GET /sports
   # GET /sports.xml
   def index

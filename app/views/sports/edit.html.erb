@@ -1,11 +1,16 @@
-<h1>Editing sport</h1>
+<h1>Editing sport: <%= @sport.name %></h1>
 
 <% form_for(@sport) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'sport_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Update Sport</legend>
+    <ul class="form">
+      <li>
+        <%= f.submit 'Update Sport' %>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Show', @sport %> |
