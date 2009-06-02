@@ -2844,3 +2844,594 @@ ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:43:48) [GET]
+  [4;36;1mArticle Load (1.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+
+ActionView::TemplateError (undefined local variable or method `time' for #<ActionView::Base:0x200b0e8>) on line #2 of app/views/news/index.html.erb:
+1: <h1 id="mast_head_title">Fantasy Sports News on NotJustaGame</h1>
+2: <p id="mast_head_date"><%= Time.strftime("%A, %B #{time.day.ordinalize}, %Y") %></p>
+3: <ul class="content_based_navigation" id="articles_section_navigation">
+4:   <h2>Sports</h2>
+5:   <li><a href="#">Football</a></li>
+
+    app/views/news/index.html.erb:2
+
+Rendered rescues/_trace (41.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:43:55) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+
+ActionView::TemplateError (undefined method `day' for Time:Class) on line #2 of app/views/news/index.html.erb:
+1: <h1 id="mast_head_title">Fantasy Sports News on NotJustaGame</h1>
+2: <p id="mast_head_date"><%= Time.strftime("%A, %B #{Time.day.ordinalize}, %Y") %></p>
+3: <ul class="content_based_navigation" id="articles_section_navigation">
+4:   <h2>Sports</h2>
+5:   <li><a href="#">Football</a></li>
+
+    app/views/news/index.html.erb:2
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:44:02) [GET]
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+
+ActionView::TemplateError (undefined method `strftime' for Time:Class) on line #2 of app/views/news/index.html.erb:
+1: <h1 id="mast_head_title">Fantasy Sports News on NotJustaGame</h1>
+2: <p id="mast_head_date"><%= Time.strftime("%A, %B #{Time.now.day.ordinalize}, %Y") %></p>
+3: <ul class="content_based_navigation" id="articles_section_navigation">
+4:   <h2>Sports</h2>
+5:   <li><a href="#">Football</a></li>
+
+    app/views/news/index.html.erb:2
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:44:08) [GET]
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 30ms (View: 24, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:45:40) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:41) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:41) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:41) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:41) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:45:52) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 130ms (View: 124, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:45:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 16:46:07) [GET]
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 89ms (View: 20, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:46:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:46:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:46:07) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 16:46:08) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:00:10) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:01:08) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `created_on' for #<Article:0x2145eb8>) on line #51 of app/views/news/index.html.erb:
+48:     <li class="article <%= 'paid' if article.pro %>">
+49:       <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Fantasy Football</span></p>
+50:       <h2 class="article_title"><a href="#"><%= article.title %></a></h2>
+51:       <p class="article_meta">By <a href="#" class="article_author_name"><%= article.user.login %></a> on <span class="article_published_date"><%= article.created_on.strftime("%m %d %I:%M%p") %>Nov 16 3:30pm</span>.</p>
+52:     </li>
+53:   <% end %>
+54: </ol>
+
+    app/views/news/index.html.erb:51
+    app/views/news/index.html.erb:47:in `each'
+    app/views/news/index.html.erb:47
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:01:19) [GET]
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 29ms (View: 20, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:19) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:19) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:20) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:20) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:01:52) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:05:57) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+
+ActionView::TemplateError (undefined method `created_on' for #<Article:0x22cd9c0>) on line #37 of app/views/news/index.html.erb:
+34:     <li class="article <%= 'paid' if article.pro %>">
+35:        <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Opinions</span></p>
+36:      <h2 class="article_title"><a href="#"><%= article.title %></a></h2>
+37:      <p class="article_meta">By <a href="#" class="article_author_name">Zack Cimini</a> on <span class="article_published_date"><%= shorthand_date(article.created_on) %></span>.</p>
+38:      <p class="article_abstract"><%= article.excerpt %></p>
+39:      </li>
+40:   <% end %>
+
+    app/views/news/index.html.erb:37
+    app/views/news/index.html.erb:33:in `each'
+    app/views/news/index.html.erb:33
+
+Rendered rescues/_trace (121.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:06:17) [GET]
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+
+ActionView::TemplateError (undefined method `created_on' for #<Article:0x2276788>) on line #37 of app/views/news/index.html.erb:
+34:     <li class="article <%= 'paid' if article.pro %>">
+35:        <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Opinions</span></p>
+36:      <h2 class="article_title"><a href="#"><%= article.title %></a></h2>
+37:      <p class="article_meta">By <a href="#" class="article_author_name">Zack Cimini</a> on <span class="article_published_date"><%= shorthand_date(article.created_on) %></span>.</p>
+38:      <p class="article_abstract"><%= article.excerpt %></p>
+39:      </li>
+40:   <% end %>
+
+    app/views/news/index.html.erb:37
+    app/views/news/index.html.erb:33:in `each'
+    app/views/news/index.html.erb:33
+
+Rendered rescues/_trace (106.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:06:48) [GET]
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `shorthand_date' for #<ActionView::Base:0x22fb230>) on line #3 of app/views/news/_article_synapse.html.erb:
+1: <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Fantasy Football</span></p>
+2:       <h2 class="article_title"><a href="#"><%= article.title %></a></h2>
+3:       <p class="article_meta">By <a href="#" class="article_author_name"><%= article.user.login %></a> on <span class="article_published_date"><%= shorthand_date(article.created_at) %></span>.</p>
+
+    app/views/news/_article_synapse.html.erb:3
+    app/views/news/index.html.erb:35
+    app/views/news/index.html.erb:33:in `each'
+    app/views/news/index.html.erb:33
+
+Rendered rescues/_trace (47.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:06:58) [GET]
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (10.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.4ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/news/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:06:58) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:06:58) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/picks.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:06:58) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/articles.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:06:58) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/guides.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-01 17:07:46) [GET]
+
+ActionController::RoutingError (No route matches "/news/images/ui/nav/questions.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-01 17:08:07) [GET]
+  [4;35;1mArticle Load (2.3ms)[0m   [0mSELECT * FROM "articles" [0m
+Rendering template within layouts/site
+Rendering news/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (10.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.4ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Rendered news/_article_synapse (0.1ms)
+Completed in 29ms (View: 21, DB: 3) | 200 OK [http://localhost/news/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090424203143)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sport_id" integer, "contents" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090424203143')[0m
+Migrating to CreateAnswers (20090425072906)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "user_id" integer, "contents" varchar(144), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090425072906')[0m
+Migrating to CreateSports (20090425073123)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "sports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090425073123')[0m
+Migrating to DebateableMigration (20090426182347)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "debateables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "debated_id" integer, "debated_type" varchar(32), "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_debateables_on_user_id" ON "debateables" ("user_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_debateables_on_debated_id_and_debated_type" ON "debateables" ("debated_id", "debated_type")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090426182347')[0m
+Migrating to CreateUsers (20090427032919)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;36;1mSQL (64.2ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427032919')[0m
+Migrating to CreateArticles (20090601204511)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" text, "content" text, "pro" boolean, "state" varchar(255), "guid" varchar(255), "revision_of" varchar(255), "published_on" datetime, "comment_count" integer(4), "user_id" integer, "category_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090601204511')[0m
+Migrating to CreateCategories (20090601204519)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(75), "sport_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_categories_on_sport_id" ON "categories" ("sport_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601204519')[0m
+Migrating to CreateCategorizations (20090601204528)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "categorizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category_id" integer, "article_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_categorizations_on_category_id" ON "categorizations" ("category_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_categorizations_on_article_id" ON "categorizations" ("article_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601204528')[0m
+Migrating to CreateComments (20090601205921)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "article_id" integer, "user_id" integer, "author" varchar(125), "url" varchar(255), "ip" varchar(40), "email" varchar(75), "state" varchar(50), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_comments_on_article_id" ON "comments" ("article_id")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090601205921')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("articles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categories")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_categories_on_sport_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorizations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_categorizations_on_article_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_categorizations_on_category_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_comments_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_comments_on_article_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("debateables")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_debateables_on_debated_id_and_debated_type')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_debateables_on_user_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sports")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m

@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  has_many :articles, :through => :categorizations
+  has_many :articles
   belongs_to :sport
 end

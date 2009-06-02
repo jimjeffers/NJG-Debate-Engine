@@ -1,7 +1,7 @@
 class CreateArticles < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
-      t.string :title, :length => 255
+      t.string :title, :limit => 255
       t.text :excerpt
       t.text :content
       t.boolean :pro
@@ -9,8 +9,9 @@ class CreateArticles < ActiveRecord::Migration
       t.string :guid
       t.string :revision_of
       t.datetime :published_on
-      t.integer :comment_count, :length => 4
-      t.references :author
+      t.integer :comment_count, :limit => 4
+      t.references :user
+      t.references :category
       t.timestamps
     end
   end

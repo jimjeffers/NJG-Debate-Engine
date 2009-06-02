@@ -3,11 +3,11 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.references :article
       t.references :user
-      t.string :author, :length => 125
+      t.string :author, :limit => 125
       t.string :url
-      t.string :ip, :length => 40
-      t.string :email, :length => 75
-      t.string :state, :length => 50
+      t.string :ip, :limit => 40
+      t.string :email, :limit => 75
+      t.string :state, :limit => 50
       t.text :content
       t.timestamps
     end

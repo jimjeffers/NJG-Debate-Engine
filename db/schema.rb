@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
     t.integer  "user_id"
-    t.string   "contents"
+    t.string   "contents",    :limit => 144
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,14 +28,15 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
     t.string   "guid"
     t.string   "revision_of"
     t.datetime "published_on"
-    t.integer  "comment_count"
-    t.integer  "author_id"
+    t.integer  "comment_count", :limit => 4
+    t.integer  "user_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :limit => 75
     t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -56,11 +57,11 @@ ActiveRecord::Schema.define(:version => 20090601205921) do
   create_table "comments", :force => true do |t|
     t.integer  "article_id"
     t.integer  "user_id"
-    t.string   "author"
+    t.string   "author",     :limit => 125
     t.string   "url"
-    t.string   "ip"
-    t.string   "email"
-    t.string   "state"
+    t.string   "ip",         :limit => 40
+    t.string   "email",      :limit => 75
+    t.string   "state",      :limit => 50
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"

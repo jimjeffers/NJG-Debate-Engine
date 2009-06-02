@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.references :question
       t.references :user
-      t.string :contents, :length => 144
+      t.string :contents, :limit => 144
       t.timestamps
     end
   end

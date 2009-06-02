@@ -1,5 +1,5 @@
 <h1 id="mast_head_title">Fantasy Sports News on NotJustaGame</h1>
-<p id="mast_head_date">Sunday, May 10th, 2009<%= Time.now %></p>
+<p id="mast_head_date"><%= full_date %></p>
 <ul class="content_based_navigation" id="articles_section_navigation">
   <h2>Sports</h2>
   <li><a href="#">Football</a></li>
@@ -30,25 +30,17 @@
   <li><a href="#">Max Rodriguez</a></li>
 </ul>
 <ol id="preview_articles">
-  <li class="article">
-    <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Opinions</span></p>
-  <h2 class="article_title"><a href="#">McNabb and Eagles Fading Quick No Doubt</a></h2>
-  <p class="article_meta">By <a href="#" class="article_author_name">Zack Cimini</a> on <span class="article_published_date">Nov 16 3:30pm</span>.</p>
-  <p class="article_abstract">As always, come to an end and in Philadelphia we may be witnessing one. A season that started off so strong for the Eagles has become an all but typical familiar pattern for Philly. On the same day that McNabb’s old university (Syracuse) fired their coach Greg Robinson, McNabb struggled unlike he has in quite some time. This was a game the Eagles had to win and even though the result was a tie they’ve set themselves up to miss out on another playoff run.</p>
-  </li>
-   <li class="article paid">
-      <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Opinions</span></p>
-    <h2 class="article_title"><a href="#">McNabb and Eagles Fading Quick No Doubt</a></h2>
-    <p class="article_meta">By <a href="#" class="article_author_name">Zack Cimini</a> on <span class="article_published_date">Nov 16 3:30pm</span>.</p>
-    <p class="article_abstract">As always, come to an end and in Philadelphia we may be witnessing one. A season that started off so strong for the Eagles has become an all but typical familiar pattern for Philly. On the same day that McNabb’s old university (Syracuse) fired their coach Greg Robinson, McNabb struggled unlike he has in quite some time. This was a game the Eagles had to win and even though the result was a tie they’ve set themselves up to miss out on another playoff run.</p>
+  <% @articles.each do |article| %>
+    <li class="article <%= 'paid' if article.pro %>">
+      <%= render :partial => 'article_synapse', :locals => {:article => article} %>
+      <p class="article_abstract"><%= article.excerpt %></p>
     </li>
+  <% end %>
 </ol>
 <ol id="listed_articles">
   <% @articles.each do |article| %>
     <li class="article <%= 'paid' if article.pro %>">
-      <p class="article_classification"><span class="sport">Nfl</span> <span class="category">Fantasy Football</span></p>
-      <h2 class="article_title"><a href="#"><%= article.title %></a></h2>
-      <p class="article_meta">By <a href="#" class="article_author_name"><%= article.user.login %></a> on <span class="article_published_date">Nov 16 3:30pm</span>.</p>
+      <%= render :partial => 'article_synapse', :locals => {:article => article} %>
     </li>
   <% end %>
 </ol>

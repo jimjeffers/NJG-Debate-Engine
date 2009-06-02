@@ -1,7 +1,7 @@
 class CreateCategories < ActiveRecord::Migration
   def self.up
     create_table :categories do |t|
-      t.string :name, :length => 75
+      t.string :name, :limit => 75
       t.references :sport
       t.timestamps
     end

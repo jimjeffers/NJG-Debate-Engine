@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_many :answers
-  has_many :articles, :foreign_key => "author_id"
+  has_many :articles
   has_many :comments
   
   validates_presence_of     :login
