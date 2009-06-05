@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Answers: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'admin' %>
+</head>
+<body id="<%= controller.controller_name %>">
+<ul id="primary_navigation">
+  <li class="articles"><%= link_to 'Articles', articles_path %></li>
+  <li class="categories"><%= link_to 'Categories', categories_path %></li>
+  <li class="sports"><%= link_to 'Sports', sports_path %></li>
+  <li class="comments"><%= link_to 'Comments', comments_path %></li>
+</ul>
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield %>
+
+</body>
+</html>

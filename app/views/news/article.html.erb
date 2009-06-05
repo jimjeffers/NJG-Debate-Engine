@@ -1,0 +1,16 @@
+<%= render :partial => 'mast_head' %>
+<%= render :partial => 'content_based_navigation', :locals => { :sports => @sports,
+                                                                :categories => @categories,
+                                                                :authors => @authors } %>
+<div id="article" class="content">
+  <%= render :partial => 'article_synapse', :locals => {:article => @article} %>
+  <div id="article_content">
+    <%= RedCloth.new(@article.content).to_html %>
+  </div>
+</div>
+<div id="article_author" class="content">
+  <h2><%= @author.name %></h2>
+  <%= RedCloth.new(@author.bio).to_html if @author.bio %>
+</div>
+
+<p id="return_link"><a href="/news">Return to articles index &gt;&gt;</a></p>

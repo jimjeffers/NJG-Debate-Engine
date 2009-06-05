@@ -1,0 +1,8 @@
+<ol id="preview_articles">
+  <% articles.each do |article| %>
+    <li class="article <%= 'paid' if article.pro %>">
+      <%= render :partial => 'article_synapse', :locals => {:article => article} %>
+      <p class="article_abstract"><%= article.excerpt %></p>
+    </li>
+  <% end %>
+</ol>

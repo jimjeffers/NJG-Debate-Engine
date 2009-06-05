@@ -1,0 +1,16 @@
+<ul class="content_based_navigation" id="articles_section_navigation">
+  <h2>Sports</h2>
+  <% sports.each do |sport| %>
+    <li<%= ' class="selected"' if sport == @sport %>><%= link_to sport.name, news_sport_path(sport.name.downcase) %></li>
+  <% end %>
+  
+  <h2>Columns</h2>
+  <% categories.each do |category| %>
+    <li <%= ' class="selected"' if category == @column %>><%= link_to category.name, news_column_path(category.id,web_friendly(category.name)) %></a></li>
+  <% end %>
+  
+  <h2>Authors</h2>
+  <% authors.each do |author| %>
+    <li <%= ' class="selected"' if author == @author %>><a href="#"><%= author.login %></a></li>
+  <% end %>
+</ul>

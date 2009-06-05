@@ -1,0 +1,84 @@
+/*   
+Theme Name: NotJustaGame ADMIN
+Theme URI: http://notjustagame.com
+Description: NotJustaGame Layout & Theme.
+Author: Jim Jeffers
+Author URI: http://notjustagame.com
+Version: 1.0
+.
+For exclusive use on NotJustaGame.com
+.
+*/
+/*  KEEP OUR CSS CLEAN
+    Some guidelines to follow:
+    1. Break code down into sections.
+    2. Keep your rules alphabetically sorted.
+    3. Only put one selector per line for a block of rules that apply to multiple selectors.
+    4. Indent your rules, only one rule per line.
+        
+        example:
+        
+        element#id,
+        element.class {
+            rule1: value;
+            rule2: value;
+            top: value;
+        }
+*/
+
+/* =BODY
+   ------------------------------------------------------ */ 
+   body {
+      background: #fff;
+      font: 1em/1.5em "Trebuchet MS", Verdana, sans-serif;
+      padding: 0;
+      position: relative;
+   }
+
+/* =BASE_ELEMENTS
+   ------------------------------------------------------ */
+   
+   a {
+      color: #f60;
+   }
+   
+   a:hover {
+      color: #f90;
+   }
+   
+   a:active {
+      color: #fc0;
+   }
+
+/* =PRIMARY_NAVIGATION
+   ------------------------------------------------------ */
+   ul#primary_navigation {
+      margin: 0 0 20px 0;
+   }
+   
+   ul#primary_navigation,
+   ul#primary_navigation li {
+      display: block;
+      background: #000;
+   }
+   
+   ul#primary_navigation li {
+      display: inline-block;
+   }
+   
+   ul#primary_navigation li a {
+      display: block;
+      font-size: 1.5em;
+      padding: 0.5em;
+      color: #f90;
+   }
+   
+   #categories ul#primary_navigation li.categories a,
+   #sports ul#primary_navigation li.sports a,
+   #articles ul#primary_navigation li.articles a,
+   #comments ul#primary_navigation li.comments a {
+      color: #fff;
+      font-weight: bold;
+   }
+   
+   
