@@ -7,4 +7,9 @@ module ApplicationHelper
   def short_date(time=Time.now)
     time.strftime("%b %d %I:%M%p")
   end
+  
+  def web_friendly(str)
+    str.split(" ").each{|i| i.downcase! }.join("-").gsub!(/[^a-zA-Z0-9\-]/,'')
+  end
+  
 end

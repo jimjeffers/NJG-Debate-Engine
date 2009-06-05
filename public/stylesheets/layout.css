@@ -103,7 +103,7 @@ For exclusive use on NotJustaGame.com
       background: url('../images/ui/page_bottom_background.png') no-repeat scroll -1px bottom;
       margin: 0 auto;
       min-height: 600px;
-      padding: 20px 20px 50px 20px;
+      padding: 20px 20px 70px 20px;
       position: relative;
       width: 920px;
    }
@@ -144,6 +144,14 @@ For exclusive use on NotJustaGame.com
    
    .content_based_navigation li {
       padding: 2px 0;
+   }
+   
+   .content_based_navigation li.selected {
+      background: #f0f0f0;
+   }
+   
+   .content_based_navigation li.selected a {
+      color: #333;
    }
 
 /* =ARTICLES
@@ -253,6 +261,49 @@ For exclusive use on NotJustaGame.com
    #listed_articles .article_meta {
       font-size: 0.6em;
       padding: 2px 0 0 100px;
+   }
+   
+   #article {
+      border-right: 1px solid #e5e5e5;
+      float: left;
+      padding: 0 90px 0 10px;
+      width: 460px;
+   }
+   
+   #article_content {
+      margin: 0.5em 0;
+   }
+   
+   .content p,
+   .content ul,
+   .content ol,
+   .content blockquote,
+   .content pre {
+      font-size: 0.785em;
+      line-height: 1.25em;
+      padding: 0.5em 0;
+   }
+   
+   .content ol li {
+      list-style: decimal outside;
+   }
+   
+   .content ul li {
+      list-style: square outside;
+   }
+   
+   #article_author {
+      float: left;
+      padding-left: 10px;
+      width: 215px;
+   }
+   
+   p#return_link {
+      clear: both;
+      font-size: 0.785em;
+      line-height: 1.25em;
+      padding: 0.5em;
+      text-align: right;
    }
    
 /* =INLINE_SITEMAP

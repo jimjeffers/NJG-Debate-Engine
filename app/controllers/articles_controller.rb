@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  layout 'admin'
+  
   before_filter :login_required
   before_filter :categories, :only => [:new, :update, :create, :edit]
   # GET /articles

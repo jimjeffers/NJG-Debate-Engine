@@ -7,6 +7,18 @@ class NewsController < ApplicationController
     @articles = Article.find(:all)
   end
   
+  def article
+    @article = Article.find(params[:id])
+    @column = @article.category
+    @sport = @column.sport
+    @author = @article.user
+  end
+  
+  def sport
+    @sport = Sport.find_by_guid(params[:guid])
+    @articles = @sport.articles
+  end
+  
   protected
   # Grabs all sports, categories, and authors.
   def get_meta

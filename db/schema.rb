@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090602011005) do
+ActiveRecord::Schema.define(:version => 20090605070342) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20090602011005) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "articles_count", :limit => 10
+    t.string   "guid"
   end
 
   add_index "categories", ["sport_id"], :name => "index_categories_on_sport_id"
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20090602011005) do
     t.datetime "updated_at"
     t.integer  "user_id",       :limit => 10
     t.integer  "answers_count", :limit => 10
+    t.string   "guid"
   end
 
   add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
@@ -112,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20090602011005) do
     t.datetime "updated_at"
     t.integer  "questions_count", :limit => 10
     t.integer  "picks_count",     :limit => 10
+    t.string   "guid"
   end
 
   create_table "users", :force => true do |t|
@@ -131,6 +134,7 @@ ActiveRecord::Schema.define(:version => 20090602011005) do
     t.integer  "questions_count",           :limit => 10
     t.integer  "picks_count",               :limit => 10
     t.integer  "answers_count",             :limit => 10
+    t.text     "bio"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

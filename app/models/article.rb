@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
   validates_presence_of :category_id, :message => "must be specified"
   validates_presence_of :user_id, :message => "must be specified"
   
+  has_guid :title
+  
   # Returns the name of the sport from the parent category.
   def sport
     category.sport.name

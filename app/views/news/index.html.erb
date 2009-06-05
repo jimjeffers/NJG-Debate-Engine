@@ -1,33 +1,7 @@
-<h1 id="mast_head_title">Fantasy Sports News on NotJustaGame.</h1>
-<p id="mast_head_date"><%= full_date %></p>
-<ul class="content_based_navigation" id="articles_section_navigation">
-  <h2>Sports</h2>
-  <% @sports.each do |sport| %>
-    <li><a href="#"><%= sport.name %></a></li>
-  <% end %>
-  
-  <h2>Columns</h2>
-  <% @categories.each do |category| %>
-    <li><a href="#"><%= category.name %></a></li>
-  <% end %>
-  
-  <h2>Authors</h2>
-  <% @authors.each do |author| %>
-    <li><a href="#"><%= author.login %></a></li>
-  <% end %>
-</ul>
-<ol id="preview_articles">
-  <% @articles.each do |article| %>
-    <li class="article <%= 'paid' if article.pro %>">
-      <%= render :partial => 'article_synapse', :locals => {:article => article} %>
-      <p class="article_abstract"><%= article.excerpt %></p>
-    </li>
-  <% end %>
-</ol>
-<ol id="listed_articles">
-  <% @articles.each do |article| %>
-    <li class="article <%= 'paid' if article.pro %>">
-      <%= render :partial => 'article_synapse', :locals => {:article => article} %>
-    </li>
-  <% end %>
-</ol>
+<%= render :partial => 'mast_head' %>
+<%= render :partial => 'content_based_navigation', :locals => { :sports => @sports,
+                                                                :categories => @categories,
+                                                                :authors => @authors } %>
+
+<%= render :partial => 'preview_articles', :locals => {:articles => @articles} %>
+<%= render :partial => 'listed_articles', :locals => {:articles => @articles} %>
