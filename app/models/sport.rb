@@ -10,7 +10,6 @@ class Sport < ActiveRecord::Base
     Article.find(:all, :conditions => "category_id IN (#{category_ids})")
   end
   
-  protected
   # return a string containing NULL to prevent MySQL errors from IN () which does
   # not throw a SQL error in sqlite.
   def category_ids

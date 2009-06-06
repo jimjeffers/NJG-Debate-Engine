@@ -9,7 +9,7 @@ class NewsController < ApplicationController
   end
   
   def article
-    @article = Article.find(params[:id])
+    @article = Article.find_by_guid(params[:guid])
     @column = @article.category
     @sport = @column.sport
     @author = @article.user
@@ -17,7 +17,18 @@ class NewsController < ApplicationController
   
   def sport
     @sport = Sport.find_by_guid(params[:guid])
-    @articles = @sport.articles
+    @articles = Article.for_sport(@sport).publicized
+    @featured = Article.for_sport(@sport).featured
+  end
+  
+  def column
+    @column = Category.find_by_guid(params[:guid])
+    @articles = @column.articles.publicized
+    @featured = @column.articles.featured
+  end
+  
+  def author
+    @author = Author.find_by_login(params[:id])
   end
   
   protected

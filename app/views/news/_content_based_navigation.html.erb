@@ -11,6 +11,6 @@
   
   <h2>Authors</h2>
   <% authors.each do |author| %>
-    <li <%= ' class="selected"' if author == @author %>><a href="#"><%= author.login %></a></li>
+    <li <%= ' class="selected"' if author == @author %>><%= link_to author.name, news_author_path(author.login) %></a></li>
   <% end %>
 </ul>

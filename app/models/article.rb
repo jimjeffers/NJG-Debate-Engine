@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   named_scope :featured, :conditions => "aasm_state='featured'"
   named_scope :submitted, :conditions => "aasm_state='submitted'"
   named_scope :deleted, :conditions => "aasm_state='deleted'"
+  named_scope :for_sport, lambda { |sport| {:conditions => "category_id IN (#{sport.category_ids})"} }
   
   belongs_to :category, :counter_cache => true
   belongs_to :user, :counter_cache => true
