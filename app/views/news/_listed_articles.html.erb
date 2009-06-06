@@ -1,5 +1,5 @@
 <ol id="listed_articles">
-  <% @rticles.each do |article| %>
+  <% @articles.each do |article| %>
     <li class="article <%= 'paid' if article.pro %>">
       <%= render :partial => 'article_synapse', :locals => {:article => article} %>
     </li>

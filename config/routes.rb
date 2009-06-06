@@ -18,9 +18,9 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.resource :session
   
-  map.news_column '/news/column/:id/:name', :controller => 'news', :action => 'column'
-  map.news_sport '/news/sport/:name', :controller => 'news', :action => 'sport'
-  map.news_author '/news/author/:name', :controller => 'news', :action => 'author'
+  map.news_column '/news/column/:id/:guid', :controller => 'news', :action => 'column'
+  map.news_sport '/news/sport/:guid', :controller => 'news', :action => 'sport'
+  map.news_author '/news/author/:guid', :controller => 'news', :action => 'author'
   map.news_article '/news/:id/:title', :controller => 'news', :action => 'article'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -64,4 +64,6 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  map.connect '/', :controller => 'news', :action => 'index'
 end

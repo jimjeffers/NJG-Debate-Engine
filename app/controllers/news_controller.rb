@@ -4,7 +4,8 @@ class NewsController < ApplicationController
   
   # Displays the main articles page.
   def index
-    @articles = Article.find(:all)
+    @articles = Article.publicized
+    @featured = Article.featured
   end
   
   def article

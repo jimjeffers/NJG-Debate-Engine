@@ -3,5 +3,5 @@
                                                                 :categories => @categories,
                                                                 :authors => @authors } %>
 
-<%= render :partial => 'preview_articles', :locals => {:articles => @articles} %>
-<%= render :partial => 'listed_articles', :locals => {:articles => @articles} %>
+<%= render :partial => 'preview_articles', :locals => {:articles => @featured } %>
+<%= render :partial => 'listed_articles', :locals => {:articles => @articles } %>

@@ -47,7 +47,7 @@
             <h2>Articles</h2>
             <% if !@sports.blank? %>
               <% for sport in @sports %>
-                <li><a href="#"><%= sport.name %></a></li>
+                <li><%= link_to sport.name, news_sport_path(sport.guid) %></li>
               <% end %>
             <% else %>
             <% end %>
@@ -56,7 +56,7 @@
             <h2>Guides</h2>
             <% if !@sports.blank? %>
               <% for sport in @sports %>
-                <li><a href="#"><%= sport.name %></a></li>
+                <li><%= link_to sport.name, news_sport_path(sport.guid) %></li>
               <% end %>
             <% else %>
             <% end %>

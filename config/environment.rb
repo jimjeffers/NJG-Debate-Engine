@@ -15,7 +15,10 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem "RedCloth", :version => '4.1.9'
+  config.gem "RedCloth", :version => "4.1.9"
+  config.gem "rubyist-aasm", :lib => "aasm", :source => "http://gems.github.com"
+  config.gem "yfactorial-utility_scopes", :lib => 'utility_scopes', :source => 'http://gems.github.com/'
+  
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"

@@ -7,7 +7,7 @@ class Sport < ActiveRecord::Base
   
   # Returns articles that belong to categories within the current sport.
   def articles
-    Article.find(:all, :conditions => "category_id IN ('#{category_ids}')")
+    Article.find(:all, :conditions => "category_id IN (#{category_ids})")
   end
   
   protected
