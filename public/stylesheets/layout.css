@@ -53,7 +53,7 @@ For exclusive use on NotJustaGame.com
 /* =BRANDING
    ------------------------------------------------------ */   
    #branding {
-      background: url('../images/ui/page_top_background.jpg') no-repeat scroll -1px top;
+      background: url('../images/ui/page_top_background.jpg') no-repeat scroll 0 top;
       height: 307px;
       margin: 0 auto;
       position: relative;
@@ -70,8 +70,9 @@ For exclusive use on NotJustaGame.com
    ------------------------------------------------------ */
    #primary_navigation {
       position: absolute;
-      left: 620px;
+      left: 50%;
       top: 60px;
+      width: 470px;
    }
    
    #primary_navigation li {
@@ -100,7 +101,7 @@ For exclusive use on NotJustaGame.com
    }
    
    #primary_content {
-      background: url('../images/ui/page_bottom_background.png') no-repeat scroll -1px bottom;
+      background: url('../images/ui/page_bottom_background.png') no-repeat scroll 0 bottom;
       margin: 0 auto;
       min-height: 600px;
       padding: 20px 20px 70px 20px;
