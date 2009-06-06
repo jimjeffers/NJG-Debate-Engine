@@ -1,0 +1,4 @@
+<div id="article_author" class="content">
+  <h2><%= author.name %></h2>
+  <%= RedCloth.new(author.bio).to_html if author.bio %>
+</div>

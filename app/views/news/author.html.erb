@@ -2,6 +2,7 @@
 <%= render :partial => 'content_based_navigation', :locals => { :sports => @sports,
                                                                 :categories => @categories,
                                                                 :authors => @authors } %>
-<%= render :partial => 'preview_articles', :locals => {:articles => @featured} %>
-<%= render :partial => 'listed_articles', :locals => {:articles => @articles} %>
+<%= render :partial => 'preview_articles', :locals => {:articles => @articles} %>
+<%= render :partial => 'author_profile', :locals => {:author => @author} %>
+
 <%= render :partial => 'return_link' %>

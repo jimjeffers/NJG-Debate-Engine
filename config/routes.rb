@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.news_column '/news/column/:id/:guid', :controller => 'news', :action => 'column'
   map.news_sport '/news/sport/:guid', :controller => 'news', :action => 'sport'
-  map.news_author '/news/author/:guid', :controller => 'news', :action => 'author'
+  map.news_author '/news/author/:login', :controller => 'news', :action => 'author'
   map.news_article '/news/:guid', :controller => 'news', :action => 'article'
 
   map.connect ':controller/:action/:id'

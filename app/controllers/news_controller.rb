@@ -4,8 +4,8 @@ class NewsController < ApplicationController
   
   # Displays the main articles page.
   def index
-    @articles = Article.publicized
-    @featured = Article.featured
+    @articles = Article.chonologically.publicized
+    @featured = Article.chonologically.featured
   end
   
   def article
@@ -17,18 +17,19 @@ class NewsController < ApplicationController
   
   def sport
     @sport = Sport.find_by_guid(params[:guid])
-    @articles = Article.for_sport(@sport).publicized
-    @featured = Article.for_sport(@sport).featured
+    @articles = Article.chonologically.for_sport(@sport).publicized
+    @featured = Article.chonologically.for_sport(@sport).featured
   end
   
   def column
     @column = Category.find_by_guid(params[:guid])
-    @articles = @column.articles.publicized
-    @featured = @column.articles.featured
+    @articles = @column.articles.chonologically.publicized
+    @featured = @column.articles.chonologically.featured
   end
   
   def author
-    @author = Author.find_by_login(params[:id])
+    @author = User.find_by_login(params[:login])
+    @articles = @author.articles.chonologically.publicized
   end
   
   protected

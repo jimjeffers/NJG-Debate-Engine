@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090606052702) do
+ActiveRecord::Schema.define(:version => 20090606221936) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20090606052702) do
     t.string   "aasm_state"
     t.string   "guid"
     t.string   "revision_of"
-    t.datetime "published_on"
+    t.datetime "published_at"
     t.integer  "comments_count", :limit => 4
     t.integer  "user_id"
     t.integer  "category_id"
