@@ -49,6 +49,35 @@ For exclusive use on NotJustaGame.com
    a:active {
       color: #fc0;
    }
+   
+   h1 { font-size: 1.25em; }
+   h2 { font-size: 1em; }
+   
+/* =ARTICLE
+   ------------------------------------------------------ */
+   
+   div#article {
+      position: relative;
+      width: 540px;
+   }
+   
+   dl#date_info {
+      font-size: 0.75em;
+      left: 580px;
+      position: absolute;
+      width: 220px;
+   }
+   
+   dl#date_info dt {
+      display: inline-block;
+      font-weight: bold;
+   }
+
+/* =PRIMARY_CONTENT
+   ------------------------------------------------------ */
+   #primary_content {
+      padding: 10px;
+   }
 
 /* =PRIMARY_NAVIGATION
    ------------------------------------------------------ */
@@ -76,9 +105,101 @@ For exclusive use on NotJustaGame.com
    #categories ul#primary_navigation li.categories a,
    #sports ul#primary_navigation li.sports a,
    #articles ul#primary_navigation li.articles a,
-   #comments ul#primary_navigation li.comments a {
+   #comments ul#primary_navigation li.comments a,
+   #users ul#primary_navigation li.users a  {
       color: #fff;
       font-weight: bold;
    }
    
+/* =TABLES
+   ------------------------------------------------------ */
+   table {
+      display: block;
+      padding: 10px 0;
+   }
    
+   table td {
+      padding: 2px 0;
+   }
+   
+   table tr {
+      border-top: 1px dotted #ccc;
+      display: block;
+   }
+   
+   table th {
+      font-size: 0.875em;
+      text-align: left;
+   }
+   
+   .article_title,
+   .category_name,
+   .user_name,
+   .sport_name {
+      width: 360px;
+   }
+   
+   .article_status {
+      width: 160px;
+   }
+   
+   .article_author,
+   .category_sport {
+      width: 120px;
+   }
+   
+   .action {
+      width: 60px;
+   }
+   
+   .action a {
+      background: #f90;
+      color: #000;
+      display: inline-block;
+      font-weight: bold;
+      padding: 2px 5px;
+   }
+   
+   .destroy a {
+      background: #f00;
+   }
+   
+   .show a {
+      background: #1c8936;
+      color: #fff;
+   }
+   
+   
+/* =FORMS
+   ------------------------------------------------------ */
+   
+   .form li {
+      display: block;
+      padding: 4px 0;
+   }
+   
+   label {
+      display: block;
+      font-weight: bold;
+   }
+   
+   input[type="text"] {
+      border: 1px solid #666;
+      display: block;
+      padding: 2px;
+   }
+   
+/* =FLASH
+   ------------------------------------------------------ */
+   #notice,
+   #error {
+      background: #1c8936;
+      color: #fff;
+      display: block;
+      font-weight: bold;
+      padding: 8px;
+   }
+   
+   #error {
+      background: #f00;
+   }

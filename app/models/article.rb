@@ -1,12 +1,13 @@
 class Article < ActiveRecord::Base
   include AASM
+  named_scope :drafted, :conditions => "aasm_state='draft'"
   named_scope :published, :conditions => "aasm_state='published'"
   named_scope :publicized, :conditions => "aasm_state IN ('published','featured')"
   named_scope :featured, :conditions => "aasm_state='featured'"
   named_scope :submitted, :conditions => "aasm_state='submitted'"
   named_scope :deleted, :conditions => "aasm_state='deleted'"
   named_scope :for_sport, lambda { |sport| {:conditions => "category_id IN (#{sport.category_ids})"} }
-  named_scope :chonologically, :order => "published_at DESC"
+  named_scope :chronologically, :order => "published_at DESC"
   
   belongs_to :category, :counter_cache => true
   belongs_to :user, :counter_cache => true

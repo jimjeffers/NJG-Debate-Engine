@@ -1,15 +1,16 @@
-<h1>Listing sports</h1>
+<h1>Listing Sports</h1>
 
 <table>
   <tr>
+    <th class="sport_name">Name</th>
+    <th class="actions"></th>
   </tr>
 
 <% @sports.each do |sport| %>
   <tr>
-    <td><%= sport.name %></td>
-    <td><%= link_to 'Show', sport %></td>
-    <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
-    <td><%= link_to 'Destroy', sport, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="sport_name"><%= sport.name %></td>
+    <td class="action edit"><%= link_to 'Edit', edit_sport_path(sport) %></td>
+    <td class="action destroy"><%= link_to 'Destroy', sport, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

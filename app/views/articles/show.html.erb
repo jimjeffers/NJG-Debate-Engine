@@ -1,11 +1,26 @@
+<div id="article">
 <h1><%= @article.title %></h1>
+<h2>Written by <%= @article.user.login %></h2>
 
-<h2>Written by <%= @article.user.login %> on <%= @article.published_on %></h2>
+<dl id="date_info">
+  <dt>Created On</dt>
+  <dd><%= full_date(@article.created_at) %></dd>
+  <dt>Updated On</dt>
+  <dd><%= full_date(@article.updated_at) %></dd>
+  <dt>Published On</dt>
+  <dd><%= full_date(@article.published_at) || 'not yet published' %></dd>
+</dl>
 
 <h3>Excerpt</h3>
-<%= @article.excerpt %>
+<div id="excerpt" class="preview_content">
+  <%= RedCloth.new(@article.excerpt).to_html unless @article.excerpt.nil? %>
+</div>
 
 <h3>Content</h3>
-<%= @article.content %>
+<div id="content" class="preview_content">
+  <%= RedCloth.new(@article.content).to_html unless @article.content.nil? %>  
+</div>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+</div>

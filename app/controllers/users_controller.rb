@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  layout 'admin'
+  before_filter :login_required, :only => [:index, :manage, :destroy, :edit, :update] 
+  require_role "admin", :only => [:index, :manage, :destroy] 
+  
   # render new.rhtml
   def new
     @user = User.new
@@ -32,5 +36,25 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default('/')
     end
+  end
+  
+  def edit
+    if (current_user.has_role?(:admin)) 
+      @user = User.find(params[:id]) 
+    else
+      @user = current_user
+    end
+  end
+  
+  def manage
+    
+  end
+  
+  def destroy
+    
+  end
+  
+  def index
+    @users = User.with_roles
   end
 end

@@ -1,0 +1,21 @@
+<h1><%= status %></h1>
+
+<table>
+  <tr>
+    <th class="article_title">Title</th>
+    <th class="article_status">Status</th>
+    <th class="article_author">Author</th>
+    <th class="article_actions" colspan="3">Actions</th>
+  </tr>
+
+<% articles.each do |article| %>
+  <tr>
+    <td class="article_title"><%= article.title %></td>
+    <td class="article_status"><%= article.aasm_state %></td>
+    <td class="article_author"><%= link_to article.user.login, article.user %></td>
+    <td class="action show"><%= link_to 'Show', article %></td>
+    <td class="action edit"><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td class="action destroy"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

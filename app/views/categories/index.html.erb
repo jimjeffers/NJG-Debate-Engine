@@ -2,15 +2,17 @@
 
 <table>
   <tr>
+    <th class="category_name">Name</th>
+    <th class="category_sport">Sport</th>
+    <th class="action">Actions</th>
   </tr>
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%= category.name %></td>
-    <td><%= category.sport.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="category_name"><%= category.name %></td>
+    <td class="category_sport"><%= category.sport.name %></td>
+    <td class="action edit"><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td class="action destroy"><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

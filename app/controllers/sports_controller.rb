@@ -3,6 +3,8 @@ class SportsController < ApplicationController
   
   before_filter :login_required
   
+  require_role "admin"
+  
   # GET /sports
   # GET /sports.xml
   def index

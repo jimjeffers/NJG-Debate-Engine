@@ -3,10 +3,23 @@ class ArticlesController < ApplicationController
   
   before_filter :login_required
   before_filter :categories, :only => [:new, :update, :create, :edit]
+  
+  require_role "author"
+  
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
+    if current_user.has_role?(:admin)
+      @published = Article.chronologically.published
+      @featured = Article.chronologically.featured
+      @submitted = Article.chronologically.submitted
+      @drafted = Article.chronologically.drafted
+    else
+      @published = current_user.articles.chronologically.published
+      @featured = current_user.articles.chronologically.featured
+      @submitted = current_user.articles.chronologically.submitted
+      @drafted = current_user.articles.chronologically.drafted
+    end
 
     respond_to do |format|
       format.html # index.html.erb
