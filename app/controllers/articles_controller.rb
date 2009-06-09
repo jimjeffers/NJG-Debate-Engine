@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    if current_user.has_role?(:admin)
+    if current_user.has_role?(:editor)
       @published = Article.chronologically.published
       @featured = Article.chronologically.featured
       @submitted = Article.chronologically.submitted

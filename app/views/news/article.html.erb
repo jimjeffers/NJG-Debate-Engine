@@ -3,6 +3,12 @@
                                                                 :categories => @categories,
                                                                 :authors => @authors } %>
 <div id="article" class="content">
+  <% unless @article.published? || @article.featured? %>
+  <div id="preview_notification">
+    <h1>This is only a preview!</h1>
+    <p>You may <%= link_to "return to the admin", articles_path %> or <%= link_to " edit this article", edit_article_path(@article) %></p>
+  </div>
+  <% end %>
   <%= render :partial => 'article_synapse', :locals => {:article => @article} %>
   <div id="article_content">
     <%= RedCloth.new(@article.content).to_html %>

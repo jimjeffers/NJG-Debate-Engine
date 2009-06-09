@@ -1,7 +1,7 @@
 <h1>Latest Articles <%= link_to 'New article &gt;&gt;', new_article_path, {:class => 'secondary_action'}%></h1>
-<%= render :partial => 'article_list', :locals => {:status => 'Submitted', :articles => @submitted } %>
-<%= render :partial => 'article_list', :locals => {:status => 'Published', :articles => @published } %>
-<%= render :partial => 'article_list', :locals => {:status => 'Featured', :articles => @featured } %>
-<%= render :partial => 'article_list', :locals => {:status => 'Drafts', :articles => @drafted } %>
+<%= render :partial => 'article_list', :locals => {:status => 'Submitted', :articles => @submitted, :role => 'editor' } %>
+<%= render :partial => 'article_list', :locals => {:status => 'Published', :articles => @published, :role => 'editor' } %>
+<%= render :partial => 'article_list', :locals => {:status => 'Featured', :articles => @featured, :role => 'editor' } %>
+<%= render :partial => 'article_list', :locals => {:status => 'Drafts', :articles => @drafted, :role => 'author' } %>
 
 <%= link_to 'New article', new_article_path %>

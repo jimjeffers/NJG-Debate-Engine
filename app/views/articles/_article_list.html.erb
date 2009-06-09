@@ -13,9 +13,9 @@
     <td class="article_title"><%= article.title %></td>
     <td class="article_status"><%= article.aasm_state %></td>
     <td class="article_author"><%= link_to article.user.login, article.user %></td>
-    <td class="action show"><%= link_to 'Show', article %></td>
-    <td class="action edit"><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td class="action destroy"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete if current_user.has_role?(:admin) %></td>
+    <td class="action show"><%= link_to 'Show', news_article_path(article.guid) %></td>
+    <td class="action edit"><%= link_to 'Edit', edit_article_path(article) unless !current_user.has_role?(role) %></td>
+    <td class="action destroy"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete unless !current_user.has_role?(role) %></td>
   </tr>
 <% end %>
 </table>

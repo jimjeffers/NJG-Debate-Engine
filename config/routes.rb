@@ -25,6 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.resource :session
   
+  map.news '/news', :controller => 'news'
   map.news_column '/news/column/:id/:guid', :controller => 'news', :action => 'column'
   map.news_sport '/news/sport/:guid', :controller => 'news', :action => 'sport'
   map.news_author '/news/author/:login', :controller => 'news', :action => 'author'

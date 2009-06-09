@@ -13,6 +13,13 @@ class NewsController < ApplicationController
     @column = @article.category
     @sport = @column.sport
     @author = @article.user
+    unless @article.published? || @article.featured?
+      if current_user
+        redirect_to news_path unless current_user.has_role?(:author)
+      else
+        redirect_to news_path
+      end
+    end
   end
   
   def sport
