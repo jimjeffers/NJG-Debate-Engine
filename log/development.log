@@ -23122,3 +23122,167 @@ Rendered users/_user_essentials (0.5ms)
 Rendered users/_user_extended (0.4ms)
   [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 4 ) [0m
 Completed in 21ms (View: 6, DB: 1) | 200 OK [http://localhost/users/4/edit]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-06-08 23:54:03) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/admin
+Rendering users/index
+  [4;36;1mUser Load Including Associations (0.9ms)[0m   [0;1mSELECT "users"."id" AS t0_r0, "users"."login" AS t0_r1, "users"."name" AS t0_r2, "users"."email" AS t0_r3, "users"."crypted_password" AS t0_r4, "users"."salt" AS t0_r5, "users"."created_at" AS t0_r6, "users"."updated_at" AS t0_r7, "users"."remember_token" AS t0_r8, "users"."remember_token_expires_at" AS t0_r9, "users"."activation_code" AS t0_r10, "users"."activated_at" AS t0_r11, "users"."comments_count" AS t0_r12, "users"."articles_count" AS t0_r13, "users"."questions_count" AS t0_r14, "users"."picks_count" AS t0_r15, "users"."answers_count" AS t0_r16, "users"."bio" AS t0_r17, "roles"."id" AS t1_r0, "roles"."name" AS t1_r1 FROM "users" LEFT OUTER JOIN "roles_users" ON "roles_users".user_id = "users".id LEFT OUTER JOIN "roles" ON "roles".id = "roles_users".role_id WHERE (roles_users.user_id=users.id) [0m
+Completed in 22ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing SportsController#index (for 127.0.0.1 at 2009-06-08 23:54:04) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mSport Load (0.3ms)[0m   [0mSELECT * FROM "sports" [0m
+Rendering template within layouts/admin
+Rendering sports/index
+Completed in 101ms (View: 22, DB: 1) | 200 OK [http://localhost/sports]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-08 23:54:05) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering categories/index
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Completed in 60ms (View: 43, DB: 1) | 200 OK [http://localhost/categories]
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-06-08 23:54:06) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/admin
+Rendering articles/index
+  [4;35;1mArticle Load (0.6ms)[0m   [0mSELECT * FROM "articles" WHERE (aasm_state='submitted') ORDER BY published_at DESC[0m
+Rendered articles/_article_list (2.2ms)
+  [4;36;1mArticle Load (0.5ms)[0m   [0;1mSELECT * FROM "articles" WHERE (aasm_state='published') ORDER BY published_at DESC[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered articles/_article_list (7.8ms)
+  [4;36;1mArticle Load (0.6ms)[0m   [0;1mSELECT * FROM "articles" WHERE (aasm_state='featured') ORDER BY published_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered articles/_article_list (2.1ms)
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM "articles" WHERE (aasm_state='draft') ORDER BY published_at DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered articles/_article_list (3.3ms)
+Completed in 44ms (View: 20, DB: 3) | 200 OK [http://localhost/articles]
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2009-06-09 00:13:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM "articles" WHERE ("articles"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering articles/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 56ms (View: 33, DB: 1) | 200 OK [http://localhost/articles/1]
+
+
+Processing NewsController#index (for 127.0.0.1 at 2009-06-09 00:14:32) [GET]
+  [4;35;1mSport Load (0.8ms)[0m   [0mSELECT * FROM "sports" [0m
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendering template within layouts/site
+Rendering news/index
+Rendered news/_mast_head (0.1ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (articles_count > 0) [0m
+Rendered news/_content_based_navigation (7.8ms)
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM "articles" WHERE (aasm_state='featured') ORDER BY published_at DESC[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.8ms)
+Rendered news/_preview_articles (6.2ms)
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM "articles" WHERE (aasm_state IN ('published','featured')) ORDER BY published_at DESC[0m
+  [4;35;1mCategory Load (0.2ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."id" = 4) [0m
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (1.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered news/_article_synapse (0.8ms)
+Rendered news/_listed_articles (3.7ms)
+Completed in 40ms (View: 16, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing SportsController#index (for 127.0.0.1 at 2009-06-09 00:15:13) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mSport Load (0.4ms)[0m   [0mSELECT * FROM "sports" [0m
+Rendering template within layouts/admin
+Rendering sports/index
+Completed in 80ms (View: 4, DB: 1) | 200 OK [http://localhost/sports]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-09 00:15:14) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering categories/index
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Completed in 32ms (View: 14, DB: 1) | 200 OK [http://localhost/categories]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-06-09 00:15:53) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/admin
+Rendering users/index
+  [4;35;1mUser Load Including Associations (0.9ms)[0m   [0mSELECT "users"."id" AS t0_r0, "users"."login" AS t0_r1, "users"."name" AS t0_r2, "users"."email" AS t0_r3, "users"."crypted_password" AS t0_r4, "users"."salt" AS t0_r5, "users"."created_at" AS t0_r6, "users"."updated_at" AS t0_r7, "users"."remember_token" AS t0_r8, "users"."remember_token_expires_at" AS t0_r9, "users"."activation_code" AS t0_r10, "users"."activated_at" AS t0_r11, "users"."comments_count" AS t0_r12, "users"."articles_count" AS t0_r13, "users"."questions_count" AS t0_r14, "users"."picks_count" AS t0_r15, "users"."answers_count" AS t0_r16, "users"."bio" AS t0_r17, "roles"."id" AS t1_r0, "roles"."name" AS t1_r1 FROM "users" LEFT OUTER JOIN "roles_users" ON "roles_users".user_id = "users".id LEFT OUTER JOIN "roles" ON "roles".id = "roles_users".role_id WHERE (roles_users.user_id=users.id) [0m
+Completed in 22ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-06-09 00:15:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering users/edit
+Rendered users/_user_essentials (0.5ms)
+Rendered users/_user_extended (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Completed in 21ms (View: 6, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-06-09 00:22:58) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/admin
+Rendering users/index
+  [4;36;1mUser Load Including Associations (0.9ms)[0m   [0;1mSELECT "users"."id" AS t0_r0, "users"."login" AS t0_r1, "users"."name" AS t0_r2, "users"."email" AS t0_r3, "users"."crypted_password" AS t0_r4, "users"."salt" AS t0_r5, "users"."created_at" AS t0_r6, "users"."updated_at" AS t0_r7, "users"."remember_token" AS t0_r8, "users"."remember_token_expires_at" AS t0_r9, "users"."activation_code" AS t0_r10, "users"."activated_at" AS t0_r11, "users"."comments_count" AS t0_r12, "users"."articles_count" AS t0_r13, "users"."questions_count" AS t0_r14, "users"."picks_count" AS t0_r15, "users"."answers_count" AS t0_r16, "users"."bio" AS t0_r17, "roles"."id" AS t1_r0, "roles"."name" AS t1_r1 FROM "users" LEFT OUTER JOIN "roles_users" ON "roles_users".user_id = "users".id LEFT OUTER JOIN "roles" ON "roles".id = "roles_users".role_id WHERE (roles_users.user_id=users.id) [0m
+Completed in 23ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing SportsController#index (for 127.0.0.1 at 2009-06-09 00:23:03) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mSport Load (0.3ms)[0m   [0mSELECT * FROM "sports" [0m
+Rendering template within layouts/admin
+Rendering sports/index
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://localhost/sports]
+
+
+Processing CategoriesController#index (for 127.0.0.1 at 2009-06-09 00:23:04) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCategory Load (0.4ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendering template within layouts/admin
+Rendering categories/index
+  [4;36;1mSport Load (0.2ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mSport Load (0.2ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sports" WHERE ("sports"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Completed in 30ms (View: 13, DB: 1) | 200 OK [http://localhost/categories]

@@ -209,3 +209,23 @@ For exclusive use on NotJustaGame.com
    #error {
       background: #f00;
    }
+
+/* =ADD_REMOVE
+   ------------------------------------------------------ */
+   .add_list li a,
+   .remove_list li a {
+      display: inline-block;
+      font-size: 0.875em;
+      margin: 0.25em 0.05em;
+      padding: 0.25em 0.75em 0.25em 25px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+   }
+   
+   .add_list li a {
+       background: #598527 url(../images/icon_plus.gif) no-repeat 6px center;
+    }
+    
+   .remove_list li a {
+      background: #a0410d url(../images/icon_delete.gif) no-repeat 6px center;
+   }
