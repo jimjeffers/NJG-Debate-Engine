@@ -1,4 +1,4 @@
-<h1>Edit User: <%= @user.login %> <%= link_to 'See all users &gt;&gt;', users_path, {:class => 'secondary_action'}%></h1>
+<h1>Edit User: <%= @user.login %> <%= link_to 'See all users &gt;&gt;', users_path, {:class => 'secondary_action'} if current_user.has_role?(:admin) %></h1>
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= error_messages_for :user %>
