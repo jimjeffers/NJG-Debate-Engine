@@ -1,5 +1,5 @@
 <div id="article">
-<h1><%= @article.title %></h1>
+<h1><%= @article.title %> <%= link_to 'See all articles &gt;&gt;', articles_path, {:class => 'secondary_action'}%></h1>
 <h2>Written by <%= @article.user.login %></h2>
 
 <dl id="date_info">

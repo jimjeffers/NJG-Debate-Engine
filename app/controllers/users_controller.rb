@@ -9,12 +9,17 @@ class UsersController < ApplicationController
   end
  
   def create
-    logout_keeping_session!
+    logout_keeping_session! unless current_user.has_role?(:admin)
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
-      redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      if current_user.has_role?(:admin)
+        redirect_to users_path
+        flash[:notice] = "New User Created!"
+      else
+        redirect_back_or_default('/')
+        flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      end
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
@@ -43,6 +48,27 @@ class UsersController < ApplicationController
       @user = User.find(params[:id]) 
     else
       @user = current_user
+    end
+  end
+  
+  def update
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        flash[:notice] = 'User was successfully updated.'
+        format.html { 
+          if current_user.has_role?(:admin)
+            redirect_to(users_path) 
+          else
+            redirect_to(edit_user_path(@user))
+          end
+        }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
     end
   end
   

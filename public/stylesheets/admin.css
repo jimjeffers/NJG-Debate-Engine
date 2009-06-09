@@ -111,6 +111,11 @@ For exclusive use on NotJustaGame.com
       font-weight: bold;
    }
    
+   ul#primary_navigation li.profile {
+      font-size: 0.75em;
+      float: right;
+   }
+   
 /* =TABLES
    ------------------------------------------------------ */
    table {
@@ -183,7 +188,8 @@ For exclusive use on NotJustaGame.com
       font-weight: bold;
    }
    
-   input[type="text"] {
+   input[type="text"],
+   input[type="password"] {
       border: 1px solid #666;
       display: block;
       padding: 2px;

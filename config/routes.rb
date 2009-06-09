@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories
   map.resources :articles
   map.resources :sports
+  map.resources :users
   
   map.resources :questions do |question|
     question.resources :answers

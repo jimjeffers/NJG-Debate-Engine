@@ -1,19 +1,21 @@
-<h1>Edit User: <%= @user.login %></h1>
+<h1>Edit User: <%= @user.login %> <%= link_to 'See all users &gt;&gt;', users_path, {:class => 'secondary_action'}%></h1>
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= error_messages_for :user %>
-<% form_for :user, :url => users_path do |f| -%>
+<% form_for @user do |f| -%>
 <fieldset id="user_details">
   <legend>User Details</legend>
   <ul class="form">
     <%= render :partial => 'user_essentials', :locals => {:f => f} %>
   </ul>
 </fieldset>
+<%= render :partial => 'user_extended', :locals => {:f => f}  %>
+
 <% if current_user.has_role?(:admin) %>
 <fieldset>
   <legend>User Permissions</legend>
   <ul class="form">
-    <% for role in @user.roles %><li><%= role.name %></li><% end %>
+    <% for role in @user.roles %><li><%= role.name unless role.name == 'admin' and @user.id == current_user.id %></li><% end %>
   </ul>
 </fieldset>
 <% end %>
