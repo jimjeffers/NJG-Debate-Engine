@@ -14,9 +14,22 @@
 <% if current_user.has_role?(:admin) %>
 <fieldset>
   <legend>User Permissions</legend>
-  <ul class="form">
-    <% for role in @user.roles %><li><%= role.name unless role.name == 'admin' and @user.id == current_user.id %></li><% end %>
+  <ul class="interactive_toggle_list remove_list">
+    <h3>Assigned To:</h3>
+    <% for role in @user.roles %>
+      <li>
+      <%= link_to role.name, user_remove_role_path(@user.id,role.name), {:class => 'remove'} unless role.name == 'admin' and @user.id == current_user.id %>
+      </li>
+    <% end %>
   </ul>
+  <% if @user.id %>
+  <ul class="interactive_toggle_list add_list">
+    <h3>Add More Roles</h3>
+    <% for role in @user.unassigned_roles %>
+      <li><%= link_to role.name, user_add_role_path(@user.id,role.name), {:class => 'add'} %></li>
+    <% end %>
+  </ul>
+  <% end %>
 </fieldset>
 <% end %>
 <p><%= submit_tag 'Update Account' %></p>

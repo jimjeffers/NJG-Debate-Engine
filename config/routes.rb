@@ -1,9 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resources :categories
+  
   map.resources :articles
+  map.article_status '/articles/:id/status/:state', :controller => 'articles', :action => 'set_status'
+  
   map.resources :sports
+  
   map.resources :users
+  map.user_add_role '/users/:id/add_role/:name', :controller => 'users', :action => 'add_role'
+  map.user_remove_role '/users/:id/remove_role/:name', :controller => 'users', :action => 'remove_role'
   
   map.resources :questions do |question|
     question.resources :answers

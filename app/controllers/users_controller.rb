@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    if (current_user.has_role?(:admin)) 
+    if current_user.has_role?(:admin)
       @user = User.find(params[:id]) 
     else
       @user = current_user
@@ -78,6 +78,22 @@ class UsersController < ApplicationController
   
   def destroy
     
+  end
+  
+  def add_role
+    if current_user.has_role?(:admin)
+      user = User.find(params[:id])
+      user.add_role(params[:name])
+    end
+    redirect_to edit_user_path(user)
+  end
+  
+  def remove_role
+    if current_user.has_role?(:admin)
+      user = User.find(params[:id])
+      user.remove_role(params[:name])
+    end
+    redirect_to edit_user_path(user)
   end
   
   def index
