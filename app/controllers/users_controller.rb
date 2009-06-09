@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     success = @user && @user.save
     if success && @user.errors.empty?
       if current_user.has_role?(:admin)
-        redirect_to users_path
+        @user.add_role(:user)
+        redirect_to edit_user_path(@user)
         flash[:notice] = "New User Created!"
       else
         redirect_back_or_default('/')

@@ -52,11 +52,12 @@ class User < ActiveRecord::Base
   end
   
   def add_role(role)
-    self.roles << Role.find_or_create_by_name(role.to_s) unless has_role?(role.to_s)
+    role = role.to_s.downcase
+    self.roles << Role.find_or_create_by_name(role) unless has_role?(role)
   end
   
   def remove_role(role)
-    self.roles.delete(Role.find_by_name(role.to_s))
+    self.roles.delete(Role.find_by_name(role.to_s.downcase))
   end
   
   def unassigned_roles
