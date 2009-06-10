@@ -52,6 +52,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @events = Article.events
   end
 
   # POST /articles
@@ -91,12 +92,31 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.xml
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
+    unless Article::EDITOR_ONLY.include?(@article.aasm_state) && !current_user.has_role?(:editor)
+      @article = Article.find(params[:id])
+      @article.delete!
+    else
+      flash[:error] = 'You are not authorized to destroy this article.'
+    end
 
     respond_to do |format|
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def set_status
+    unless (Article::EDITOR_ONLY.include?(params[:state]) && !current_user.has_role?(:editor)) || !Article.events.include?(params[:state])
+      article = Article.find(params[:id])
+      article.send("#{params[:state]}!")
+      flash[:notice] = 'Article was successfully '+params[:state]+'.'
+    else
+      flash[:error] = 'You cannot set articles as '+params[:state]+'.'
+    end
+    unless Article::EDITOR_ONLY.include?(article.aasm_state) && !current_user.has_role?(:editor)
+      redirect_to edit_article_path(article)
+    else
+      redirect_to articles_path
     end
   end
   

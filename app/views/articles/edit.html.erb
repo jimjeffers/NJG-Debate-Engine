@@ -2,6 +2,39 @@
 
 <% form_for(@article) do |f| %>
   <%= f.error_messages %>
+  <div id="status">
+    <h2>Status: <%= @article.aasm_state %></h2>
+    <ol>
+      <% if !%w(published featured).include?(@article.aasm_state) %>
+        <% if @article.aasm_state != 'draft' %>
+        <li class="state_draft"><%= link_to 'draft', article_status_path(@article,'draft') %></li>
+        <% end %>
+        <% if @article.aasm_state != 'submitted' %>
+        <li class="state_submit"><%= link_to 'submit', article_status_path(@article,'submit') %></li>
+        <% end %>
+        <% if current_user.has_role?(:editor) %>
+          <li class="state_publish"><%= link_to 'publish', article_status_path(@article,'publish') %></li>
+        <% end %>
+      <% else %>
+        <% if current_user.has_role?(:editor) %>
+          <% if @article.aasm_state != 'shelved' %>
+            <li class="state_shelf"><%= link_to 'shelf (hide)', article_status_path(@article,'shelf') %></li>
+          <% end%>
+          <% if @article.aasm_state != 'featured' %>
+            <li class="state_feature"><%= link_to 'feature', article_status_path(@article,'feature') %></li>
+          <% else %>
+            <li class="state_unfeature"><%= link_to 'unfeature', article_status_path(@article,'unfeature') %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% if @article.aasm_state != 'deleted' %>
+      <li class="state_delete"><%= link_to 'delete', article_status_path(@article,'delete') %></li>
+      <% end %>
+      <% if @article.aasm_state == 'deleted' %>
+      <li class="state_undelete"><%= link_to 'undelete', article_status_path(@article,'undelete') %></li>
+      <% end %>
+    </ol>
+  </div>
   <%= render :partial => 'article_form', :locals => {:f => f} %>
   <fieldset>
     <legend>Save Your Changes</legend>

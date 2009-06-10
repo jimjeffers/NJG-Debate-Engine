@@ -22,28 +22,51 @@ class Article < ActiveRecord::Base
   aasm_state :draft
   aasm_state :submitted
   aasm_state :published, :enter => :publish_date
+  aasm_state :shelved
   aasm_state :deleted
   aasm_state :featured
 
   aasm_event :submit do
     transitions :to => :submitted, :from => [:draft]
   end
-
-  aasm_event :delete do
-    transitions :to => :deleted, :from => [:draft, :submitted, :published]
-  end
   
   aasm_event :publish do
-    transitions :to => :published, :from => [:draft, :submitted]
+    transitions :to => :published, :from => [:draft, :submitted, :shelved]
   end
   
   aasm_event :feature do
-    transitions :to => :featured, :from => [:published]
+    transitions :to => :featured, :from => [:published, :shelved]
+  end
+  
+  aasm_event :unfeature do
+    transitions :to => :published, :from => [:featured]
+  end
+  
+  aasm_event :shelf do
+    transitions :to => :shelved, :from => [:published, :featured]
+  end
+  
+  aasm_event :delete do
+    transitions :to => :deleted, :from => [:draft, :submitted, :published, :featured]
   end
   
   aasm_event :undelete do
     transitions :to => :draft, :from => [:deleted]
   end
+  
+  # Returns all states in aasm as an array of strings.
+  def self.states
+    aasm_states.collect { |s| s.name.to_s }
+  end
+  
+  # Returns all events in aasm as an array of strings.
+  def self.events
+    Article.aasm_events.collect{ |k,v| k.to_s }
+  end
+  
+  # Define protected states as a constant.
+  EDITOR_ONLY = %w(feature featured publish published shelf shelved unfeature)
+  
   # END: AASM States to handle publishing.
   
   def publish_date
