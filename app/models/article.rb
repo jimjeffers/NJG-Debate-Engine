@@ -26,6 +26,10 @@ class Article < ActiveRecord::Base
   aasm_state :deleted
   aasm_state :featured
 
+  aasm_event :revert do
+    transitions :to => :draft, :from => [:submitted,:shelved,:published,:featured,:deleted]
+  end
+  
   aasm_event :submit do
     transitions :to => :submitted, :from => [:draft]
   end
@@ -47,7 +51,7 @@ class Article < ActiveRecord::Base
   end
   
   aasm_event :delete do
-    transitions :to => :deleted, :from => [:draft, :submitted, :published, :featured]
+    transitions :to => :deleted,:from => [:submitted,:shelved,:published,:featured,:draft]
   end
   
   aasm_event :undelete do

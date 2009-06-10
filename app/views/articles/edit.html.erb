@@ -7,7 +7,7 @@
     <ol>
       <% if !%w(published featured).include?(@article.aasm_state) %>
         <% if @article.aasm_state != 'draft' %>
-        <li class="state_draft"><%= link_to 'draft', article_status_path(@article,'draft') %></li>
+        <li class="state_draft"><%= link_to 'draft', article_status_path(@article,'revert') %></li>
         <% end %>
         <% if @article.aasm_state != 'submitted' %>
         <li class="state_submit"><%= link_to 'submit', article_status_path(@article,'submit') %></li>

@@ -15,7 +15,7 @@
     <td class="article_author"><%= link_to article.user.login, article.user %></td>
     <td class="action show"><%= link_to 'Show', news_article_path(article.guid) %></td>
     <td class="action edit"><%= link_to 'Edit', edit_article_path(article) unless !current_user.has_role?(role) %></td>
-    <td class="action destroy"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete unless !current_user.has_role?(role) %></td>
+    <td class="action destroy"><%= link_to 'Destroy', article_status_path(article,'delete'), :confirm => 'Are you sure?' unless !current_user.has_role?(role) %></td>
   </tr>
 <% end %>
 </table>

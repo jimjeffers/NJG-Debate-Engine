@@ -1,6 +1,6 @@
 <div id="article">
 <h1><%= @article.title %> <%= link_to 'See all articles &gt;&gt;', articles_path, {:class => 'secondary_action'}%></h1>
-<h2>Written by <%= @article.user.login %></h2>
+<h2>Written by: <%= @article.user.name %></h2>
 
 <dl id="date_info">
   <dt>Created On</dt>
@@ -10,6 +10,8 @@
   <dt>Published On</dt>
   <dd><%= full_date(@article.published_at) || 'not yet published' %></dd>
 </dl>
+
+<h2><%= link_to 'Preview this article &gt;&gt;', news_article_path(@article.guid) %></h2>
 
 <h3>Excerpt</h3>
 <div id="excerpt" class="preview_content">

@@ -50,7 +50,7 @@ For exclusive use on NotJustaGame.com
       color: #fc0;
    }
    
-   h1 { font-size: 1.25em; }
+   h1 { font-size: 1.25em; margin: 1em 0; }
    h2 { font-size: 1em; }
    
 /* =ARTICLE
@@ -177,6 +177,9 @@ For exclusive use on NotJustaGame.com
    
 /* =FORMS
    ------------------------------------------------------ */
+   form {
+      position: relative;
+   }
    
    .form li {
       display: block;
@@ -232,7 +235,8 @@ For exclusive use on NotJustaGame.com
     .add_list,
     .remove_list {
        float: left;
-       width: 400px;
+       width: 300px;
+       padding: 20px;
     }
     
     body .add_list li,
@@ -256,4 +260,75 @@ For exclusive use on NotJustaGame.com
     
    .remove_list li a {
       background: #a0410d url(../images/ui/icons/icon_delete.gif) no-repeat 6px center;
+   }
+
+/* =EDITING_FORM
+   ------------------------------------------------------ */
+   
+   legend {
+      border: 1px solid #ccc;
+      display: block;
+      padding: 10px;
+   }
+   
+   fieldset {
+      border-top: 1px solid #ccc;
+      width: 700px;
+   }
+   
+   #status {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      position: absolute;
+      left: 500px;
+   }
+   
+   ul.form {
+      padding: 10px;
+   }
+   
+   ul.form li {
+      padding: 5px;
+   }
+   
+   ul.form li:last-child {
+      border-bottom: none;
+   }
+   
+   #article_excerpt,
+   #article_content {
+      height: 150px;
+      padding: 10px;
+      width: 500px;
+   }
+   
+   #article_content {
+      height: 600px;
+   }
+
+/* =PREVIEW_CONTENT
+   ------------------------------------------------------ */
+   .preview_content {
+      width: 500px;
+   }
+   
+   .preview_content p,
+   .preview_content ul,
+   .preview_content ol,
+   .preview_content pre {
+      margin: 10px 20px;
+   }
+   
+   .preview_content p {
+      margin: 10px;
+   }
+   
+   .preview_content ul,
+   .preview_content ol {
+      list-style: square inside;
+   }
+   
+   .preview_content ol {
+      list-style: decimal inside;
    }
