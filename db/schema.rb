@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090606221936) do
+ActiveRecord::Schema.define(:version => 20090610233743) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -28,20 +28,24 @@ ActiveRecord::Schema.define(:version => 20090606221936) do
     t.string   "guid"
     t.string   "revision_of"
     t.datetime "published_at"
-    t.integer  "comments_count", :limit => 4
+    t.integer  "comments_count",  :limit => 4
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "seo_title"
+    t.string   "seo_description"
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name",           :limit => 75
+    t.string   "name",            :limit => 75
     t.integer  "sport_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "articles_count", :limit => 10
+    t.integer  "articles_count",  :limit => 10
     t.string   "guid"
+    t.string   "seo_title"
+    t.string   "seo_description"
   end
 
   add_index "categories", ["sport_id"], :name => "index_categories_on_sport_id"
@@ -115,6 +119,22 @@ ActiveRecord::Schema.define(:version => 20090606221936) do
     t.integer  "questions_count", :limit => 10
     t.integer  "picks_count",     :limit => 10
     t.string   "guid"
+    t.string   "seo_title"
+    t.string   "seo_description"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "users", :force => true do |t|

@@ -3,6 +3,8 @@ class Sport < ActiveRecord::Base
   validates_uniqueness_of :name
   has_many :questions
   has_many :categories
+  
+  acts_as_taggable
   has_guid :name
   
   # Returns articles that belong to categories within the current sport.

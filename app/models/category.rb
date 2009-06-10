@@ -6,6 +6,7 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :sport
   
+  acts_as_taggable
   has_guid :name
   
 end

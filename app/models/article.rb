@@ -15,6 +15,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :category_id, :message => "must be specified"
   validates_presence_of :user_id, :message => "must be specified"
   
+  acts_as_taggable
   has_guid :title
 
   # BEGIN: AASM States to handle publishing.
