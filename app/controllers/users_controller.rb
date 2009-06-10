@@ -78,7 +78,9 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    
+    @user = User.find(params[:id])
+    flash[:error] = 'We currently do not allow the deletion of user accounts at this time.'
+    redirect_to users_path
   end
   
   def add_role
