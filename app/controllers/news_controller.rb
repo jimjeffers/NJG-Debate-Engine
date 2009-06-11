@@ -13,6 +13,8 @@ class NewsController < ApplicationController
     @column = @article.category
     @sport = @column.sport
     @author = @article.user
+    get_seo(@article)
+    
     unless @article.published? || @article.featured?
       if current_user
         redirect_to news_path unless current_user.has_role?(:author)
@@ -26,12 +28,14 @@ class NewsController < ApplicationController
     @sport = Sport.find_by_guid(params[:guid])
     @articles = Article.chronologically.for_sport(@sport).publicized
     @featured = Article.chronologically.for_sport(@sport).featured
+    get_seo(@sport)
   end
   
   def column
     @column = Category.find_by_guid(params[:guid])
     @articles = @column.articles.chronologically.publicized
     @featured = @column.articles.chronologically.featured
+    get_seo(@column)
   end
   
   def author
@@ -46,5 +50,11 @@ class NewsController < ApplicationController
     @sports = Sport.all
     @categories = Category.all
     @authors = User.authors
+  end
+  
+  def get_seo(object)
+    @page_title = object.seo_title
+    @page_description = object.seo_description
+    @page_keywords = object.tag_list
   end
 end
