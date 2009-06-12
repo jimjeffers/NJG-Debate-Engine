@@ -52,6 +52,7 @@ class NewsController < ApplicationController
     @authors = User.authors
   end
   
+  # Gets SEO information for the supplied object
   def get_seo(object)
     @page_title = object.seo_title
     @page_description = object.seo_description

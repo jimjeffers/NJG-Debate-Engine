@@ -3,6 +3,7 @@ class Sport < ActiveRecord::Base
   validates_uniqueness_of :name
   has_many :questions
   has_many :categories
+  has_many :products
   
   acts_as_taggable
   has_guid :name

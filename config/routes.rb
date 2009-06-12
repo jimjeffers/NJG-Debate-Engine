@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :orders
+
+  map.resources :products
+
   map.resources :comments
   map.resources :categories
   

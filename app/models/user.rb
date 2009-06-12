@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :articles
   has_many :comments
+  has_many :orders
+  has_many :carts
+  has_many :profile_addresses
   
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
