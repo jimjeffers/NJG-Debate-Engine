@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: User</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">User</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/app/models/user_rb.html">
+                app/models/user.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                ActiveRecord::Base
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000045">activate!</a>&nbsp;&nbsp;
+      <a href="#M000047">active?</a>&nbsp;&nbsp;
+      <a href="#M000041">add_role</a>&nbsp;&nbsp;
+      <a href="#M000048">authenticate</a>&nbsp;&nbsp;
+      <a href="#M000050">email=</a>&nbsp;&nbsp;
+      <a href="#M000040">has_role?</a>&nbsp;&nbsp;
+      <a href="#M000049">login=</a>&nbsp;&nbsp;
+      <a href="#M000051">make_activation_code</a>&nbsp;&nbsp;
+      <a href="#M000044">persuasion_score</a>&nbsp;&nbsp;
+      <a href="#M000046">recently_activated?</a>&nbsp;&nbsp;
+      <a href="#M000042">remove_role</a>&nbsp;&nbsp;
+      <a href="#M000043">unassigned_roles</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Authentication</span>
+        <span class="include-name">Authentication::ByPassword</span>
+        <span class="include-name">Authentication::ByCookieToken</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">total_score</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="#M000048" class="method-signature">
+          <span class="method-name">authenticate</span><span class="method-args">(login, password)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Authenticates a user by their login name and unencrypted password. Returns
+the user or nil.
+</p>
+<p>
+uff. this is really an authorization, not authentication routine. We really
+need a Dispatch Chain here or something. This will also let us return a
+human error message.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000048-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/user.rb, line 108</span>
+108:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">login</span>, <span class="ruby-identifier">password</span>)
+109:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">login</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">password</span>.<span class="ruby-identifier">blank?</span>
+110:     <span class="ruby-comment cmt">#u = find :first, :conditions =&gt; ['login = ? and activated_at IS NOT NULL', login] # need to get the salt</span>
+111:     <span class="ruby-identifier">u</span> = <span class="ruby-identifier">find</span> <span class="ruby-identifier">:first</span>, <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">'login = ?'</span>, <span class="ruby-identifier">login</span>] <span class="ruby-comment cmt"># need to get the salt</span>
+112:     <span class="ruby-identifier">u</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">authenticated?</span>(<span class="ruby-identifier">password</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">u</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+113:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="#M000045" class="method-signature">
+          <span class="method-name">activate!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Activates the user in the database.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 85</span>
+85:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">activate!</span>
+86:     <span class="ruby-ivar">@activated</span> = <span class="ruby-keyword kw">true</span>
+87:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">activated_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">utc</span>
+88:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">activation_code</span> = <span class="ruby-keyword kw">nil</span>
+89:     <span class="ruby-identifier">save</span>(<span class="ruby-keyword kw">false</span>)
+90:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="#M000047" class="method-signature">
+          <span class="method-name">active?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/user.rb, line 97</span>
+ 97:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active?</span>
+ 98:     <span class="ruby-comment cmt"># the existence of an activation code means they have not activated yet</span>
+ 99:     <span class="ruby-identifier">activation_code</span>.<span class="ruby-identifier">nil?</span>
+100:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="#M000041" class="method-signature">
+          <span class="method-name">add_role</span><span class="method-args">(role)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 54</span>
+54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_role</span>(<span class="ruby-identifier">role</span>)
+55:     <span class="ruby-identifier">role</span> = <span class="ruby-identifier">role</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>
+56:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">roles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Role</span>.<span class="ruby-identifier">find_or_create_by_name</span>(<span class="ruby-identifier">role</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">has_role?</span>(<span class="ruby-identifier">role</span>)
+57:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="#M000050" class="method-signature">
+          <span class="method-name">email=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000050-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/user.rb, line 119</span>
+119:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">email=</span>(<span class="ruby-identifier">value</span>)
+120:     <span class="ruby-identifier">write_attribute</span> <span class="ruby-identifier">:email</span>, (<span class="ruby-identifier">value</span> <span class="ruby-value">? </span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>)
+121:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">has_role?</span><span class="method-args">(role_in_question)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="User.html#M000040">has_role?</a> simply needs to return true or
+false whether a user has a role or not. It may be a good idea to have
+&quot;admin&quot; roles return true always
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 48</span>
+48:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_role?</span>(<span class="ruby-identifier">role_in_question</span>)
+49:     <span class="ruby-ivar">@_list</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">roles</span>.<span class="ruby-identifier">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:name</span>)
+50:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@_list</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">&quot;admin&quot;</span>)
+51:     (<span class="ruby-ivar">@_list</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">role_in_question</span>.<span class="ruby-identifier">to_s</span>) )
+52:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="#M000049" class="method-signature">
+          <span class="method-name">login=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000049-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/user.rb, line 115</span>
+115:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">login=</span>(<span class="ruby-identifier">value</span>)
+116:     <span class="ruby-identifier">write_attribute</span> <span class="ruby-identifier">:login</span>, (<span class="ruby-identifier">value</span> <span class="ruby-value">? </span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>)
+117:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="#M000044" class="method-signature">
+          <span class="method-name">persuasion_score</span><span class="method-args">(sql={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000044-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 68</span>
+68:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">persuasion_score</span>(<span class="ruby-identifier">sql</span>={})
+69:     <span class="ruby-comment cmt"># Maybe there is a better way to do this without SQL? Either way it's fairly clean SQL.</span>
+70:     <span class="ruby-comment cmt"># I doubt we're going to be able to avoid custom sql for some of this custom reporting.</span>
+71:     <span class="ruby-constant">User</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_all</span>(
+72:       <span class="ruby-node">&quot;SELECT
+73:         sum(debateables.score) AS total_score 
+74:       FROM 
+75:         answers answers, 
+76:         debateables debateables 
+77:       WHERE
+78:         answers.user_id = #{id} AND
+79:         debateables.debated_id = answers.id AND
+80:         debateables.debated_type = 'Answer'&quot;</span>
+81:     )[<span class="ruby-value">0</span>][<span class="ruby-value str">'total_score'</span>]
+82:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="#M000046" class="method-signature">
+          <span class="method-name">recently_activated?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the user has just been activated.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 93</span>
+93:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recently_activated?</span>
+94:     <span class="ruby-ivar">@activated</span>
+95:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="#M000042" class="method-signature">
+          <span class="method-name">remove_role</span><span class="method-args">(role)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 59</span>
+59:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_role</span>(<span class="ruby-identifier">role</span>)
+60:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">roles</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-constant">Role</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">role</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>))
+61:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="#M000043" class="method-signature">
+          <span class="method-name">unassigned_roles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000043-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/user.rb, line 63</span>
+63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unassigned_roles</span>
+64:     <span class="ruby-constant">Role</span>.<span class="ruby-identifier">all</span>(<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;id NOT IN (#{(roles.length &gt; 0) ? roles.map{|r| r.id}.join(', ') : 'NULL'})&quot;</span>)
+65:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="#M000051" class="method-signature">
+          <span class="method-name">make_activation_code</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000051-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/models/user.rb, line 125</span>
+125:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">make_activation_code</span>
+126:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">activation_code</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">make_token</span>
+127:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
