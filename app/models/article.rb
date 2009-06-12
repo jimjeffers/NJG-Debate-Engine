@@ -19,6 +19,10 @@ class Article < ActiveRecord::Base
   has_guid :title
 
   # BEGIN: AASM States to handle publishing.
+  
+  # Define protected states as a constant.
+  EDITOR_ONLY = %w(feature featured publish published shelf shelved unfeature)
+  
   aasm_initial_state :draft
   aasm_state :draft
   aasm_state :submitted
@@ -68,10 +72,6 @@ class Article < ActiveRecord::Base
   def self.events
     Article.aasm_events.collect{ |k,v| k.to_s }
   end
-  
-  # Define protected states as a constant.
-  EDITOR_ONLY = %w(feature featured publish published shelf shelved unfeature)
-  
   # END: AASM States to handle publishing.
   
   def publish_date
@@ -80,6 +80,6 @@ class Article < ActiveRecord::Base
   
   # Returns the name of the sport from the parent category.
   def sport
-    category.sport.name
+    (category) ? category.sport.name : nil
   end
 end
