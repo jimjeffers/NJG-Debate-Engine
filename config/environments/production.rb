@@ -26,3 +26,15 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :test
+end
+
+config.to_prepare do
+  OrderTransaction.gateway = 
+    ActiveMerchant::Billing::AuthorizeNetGateway.new(
+      :login    => '4ffrBT36La',
+      :password => '2JC6bA988aq2s7Vk'
+    )
+end

@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
            :class_name => 'OrderTransaction', 
            :dependent => :destroy
   # END has_many_transactions
+  
   belongs_to :user
   has_one :cart
   
@@ -14,19 +15,6 @@ class Order < ActiveRecord::Base
   validates_presence_of :expiration_year
   
   attr_accessor :verification_number, :card_number, :card_type, :same_as_billing, :expiration_month, :expiration_year
-  
-  def before_save
-    product_id = nil if product_id == 'invoice'
-    if same_as_billing
-      self.first_name = billing_first_name
-      self.last_name = billing_last_name
-      self.shipping_state = billing_state
-      self.address_1 = billing_address_1
-      self.address_2 = billing_address_2
-      self.zip = billing_zip
-      self.city = billing_city
-    end
-  end
   
   # BEGIN acts_as_state_machine
   aasm_initial_state :pending
@@ -79,15 +67,6 @@ class Order < ActiveRecord::Base
   end
   # END number
   
-  def calculated_amount
-    unless product.nil?
-      self.amount = (product.price.to_f * quantity) * 100
-    else
-      self.amount = custom_payment_amount.to_f * 100
-    end
-    return self.amount
-  end
-  
   # BEGIN authorize_payment
   def authorize_payment(credit_card, options = {})
     self.calculated_amount
@@ -117,8 +96,8 @@ class Order < ActiveRecord::Base
       :zip => "#{zip}"
     }
     
-    options[:merchant] = "Marketing With a Flair"
-    options[:email] = email
+    options[:merchant] = "NotJustaGame.com"
+    options[:email] = user.email
     
     transaction do
 
