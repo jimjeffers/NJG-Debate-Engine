@@ -1,0 +1,15 @@
+<h1>Editing guide</h1>
+
+<% form_for(@guide) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'products/product_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Update Guide</legend>
+    <ul class="form">
+      <li><%= f.submit 'Update' %></li>
+    </ul>
+  </fieldset>
+<% end %>
+
+<%= link_to 'Show', @guide %> |
+<%= link_to 'Back', guides_path %>

@@ -2,10 +2,13 @@
 
 <% form_for(@product) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <%= render :partial => 'product_form', :locals => {:f => f} %>
+  <fieldset>
+    <legend>Update Product</legend>
+    <ul class="form">
+      <li><%= f.submit 'Update' %></li>
+    </ul>
+  </fieldset>
 <% end %>
 
 <%= link_to 'Show', @product %> |

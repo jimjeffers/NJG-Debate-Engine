@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
-  layout 'admin'
+  layout 'admin'  
+  before_filter :login_required
+  require_role "questions"
   
   # GET /questions
   # GET /questions.xml

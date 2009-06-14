@@ -9,10 +9,23 @@
         <%= f.label :category_id, "Category" %>
         <%= f.select :category_id, @categories.collect {|c| [ "[#{c.sport.name}] #{c.name}", c.id ] }, {:include_blank => 'Please Select'} %>
       </li>
-      <li>
+      <li class="radio">
         <%= f.label :pro, "Pro" %>
         <%= f.check_box :pro %>
       </li>
+      <% if current_user.has_role?(:editor) %>
+      <li>
+        <%= f.label :published_at, "Published At" %>
+        <%= f.text_field :published_at %>
+        <div id="published_at_option" class="hidden">
+          <p>Set automatically when published. (<a href="#" id="edit_published_at">edit</a>)</p>
+          <ul class="hidden">
+          <li><input type="text" name="published_at_date" value="" id="published_at_date"/></li>
+          <li><input type="text" name="published_at_time" value="" id="published_at_time"/></li>
+          </ul>
+        </div>
+      </li>
+      <% end %>
     </ul>
   </fieldset>
   <fieldset>

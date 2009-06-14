@@ -138,18 +138,21 @@ For exclusive use on NotJustaGame.com
    }
    
    .article_title,
+   .product_title,
    .category_name,
    .user_name,
    .sport_name {
       width: 360px;
    }
    
-   .article_status {
+   .article_status,
+   .product_status {
       width: 160px;
    }
    
    .article_author,
-   .category_sport {
+   .category_sport,
+   .product_price {
       width: 120px;
    }
    
@@ -174,7 +177,6 @@ For exclusive use on NotJustaGame.com
       color: #fff;
    }
    
-   
 /* =FORMS
    ------------------------------------------------------ */
    form {
@@ -196,6 +198,26 @@ For exclusive use on NotJustaGame.com
       border: 1px solid #666;
       display: block;
       padding: 2px;
+   }
+   
+   .form li.radio {
+      position: relative;
+      padding-left: 20px;
+   }
+   
+   .form li.radio input {
+      position: absolute;
+      left: 0;
+      top: 5px;
+   }
+   
+   .hidden {
+      display: none;
+   }
+   
+   #published_at_option ul li,
+   #published_at_option ul li input {
+      display: inline;
    }
    
 /* =FLASH
