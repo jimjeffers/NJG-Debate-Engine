@@ -106,6 +106,8 @@ For exclusive use on NotJustaGame.com
    #sports ul#primary_navigation li.sports a,
    #articles ul#primary_navigation li.articles a,
    #comments ul#primary_navigation li.comments a,
+   #products ul#primary_navigation li.products a,
+   #guides ul#primary_navigation li.products a,
    #users ul#primary_navigation li.users a  {
       color: #fff;
       font-weight: bold;
@@ -353,4 +355,12 @@ For exclusive use on NotJustaGame.com
    
    .preview_content ol {
       list-style: decimal inside;
+   }
+
+/* =jQuery UI
+   ------------------------------------------------------ */
+   .ui-datepicker-calendar td,
+   .ui-datepicker-calendar td a {
+      text-align: center;
+      width: 20px;
    }
