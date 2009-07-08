@@ -9,7 +9,8 @@ class CreateProfileAddresses < ActiveRecord::Migration
       t.string :city
       t.text :state
       t.string :zip, :length => 12
-      t.string :country, :default => 'United States'
+      t.string :country, :default => 'US'
+      t.datetime :deleted_at
       t.references :user
       t.timestamps
     end
@@ -17,7 +18,7 @@ class CreateProfileAddresses < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index :profile_addresses, :column_name
+    remove_index :profile_addresses, :user_id
     drop_table :profile_addresses
   end
 end
