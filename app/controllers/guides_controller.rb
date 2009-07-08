@@ -39,6 +39,7 @@ class GuidesController < ApplicationController
   # GET /guides/1/edit
   def edit
     @guide = Guide.find(params[:id])
+    @image = Image.new(params[:image])
   end
 
   # POST /guides

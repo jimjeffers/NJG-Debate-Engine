@@ -1,5 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :guides
+  map.resources :images
+
+  map.resources :guides do |guide|
+    guide.resources :images
+  end
 
   map.resources :orders
 

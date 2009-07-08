@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090614202825) do
+ActiveRecord::Schema.define(:version => 20090616233241) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -109,6 +109,25 @@ ActiveRecord::Schema.define(:version => 20090614202825) do
 
   add_index "debateables", ["debated_id", "debated_type"], :name => "index_debateables_on_debated_id_and_debated_type"
   add_index "debateables", ["user_id"], :name => "index_debateables_on_user_id"
+
+  create_table "images", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "content_type"
+    t.string   "attachable_type"
+    t.integer  "attachable_id"
+    t.string   "type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["attachable_id"], :name => "index_images_on_attachable_id"
+  add_index "images", ["attachable_type"], :name => "index_images_on_attachable_type"
+  add_index "images", ["parent_id"], :name => "index_images_on_parent_id"
 
   create_table "memberships", :force => true do |t|
     t.datetime "paid_at"
