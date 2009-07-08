@@ -85,10 +85,6 @@ class Order < ActiveRecord::Base
   end
   # END authorize_payment
 
-  def authorize_and_capture_payment(options = {:ip => '127.0.0.1'})
-    
-  end
-
   def setup_order(options)
     options[:description] = "NJG Order: #{id}"
     
@@ -133,20 +129,20 @@ class Order < ActiveRecord::Base
       capture
     end
   end
-  # END capture_payment
 
-  # BEGIN authorization_reference
+  # Retrieves the latest uthorization reference stored for the current order.
   def authorization_reference
     if authorization = transactions.find_by_action_and_success('authorization', true, :order => 'id ASC')
       authorization.reference
     end
   end
-  # END authorization_reference
   
+  # Should be converted into a named scope ASAP.
   def self.lookup(phrase)
     self.find(:all, :conditions => ['id=? OR billing_first_name=? OR billing_last_name=?',phrase,phrase,phrase])
   end
   
+  # Creates a new active merchant credit card object given stored parameters.
   def credit_card
     credit_card = ActiveMerchant::Billing::CreditCard.new(
       :first_name         => billing_address.first_name,
@@ -156,5 +152,13 @@ class Order < ActiveRecord::Base
       :year               => expiration_year,
       :verification_value => verification_number
     )
+  end
+  
+  def billing_address
+    ProfileAddress.find_with_deleted(read_attribute(:billing_address_id))
+  end
+  
+  def shipping_address
+    ProfileAddress.find_with_deleted(read_attribute(:shipping_address_id))
   end
 end
